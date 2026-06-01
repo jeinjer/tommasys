@@ -85,10 +85,12 @@ const form = reactive({
 
 const isSending = ref(false);
 const isSent = ref(false);
+const isError = ref(false);
 
 const buttonText = computed(() => {
   if (isSending.value) return 'Enviando...';
   if (isSent.value) return '¡Mensaje enviado! ✓';
+  if (isError.value) return 'Hubo un error. Reintentar';
   return 'Enviar mensaje';
 });
 
@@ -97,19 +99,36 @@ const handleSubmit = async () => {
   if (!form.name || !form.email || !form.message) return;
 
   isSending.value = true;
+  isSent.value = false;
+  isError.value = false;
 
-  // Simulate server request (1400ms)
-  await new Promise((resolve) => setTimeout(resolve, 1400));
+  try {
+    const response = await fetch('/api/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(form)
+    });
 
-  isSending.value = false;
-  isSent.value = true;
+    if (!response.ok) {
+      throw new Error('Error en el envío');
+    }
 
-  // Reset form and states after 3000ms
-  setTimeout(() => {
-    isSent.value = false;
-    form.name = '';
-    form.email = '';
-    form.message = '';
-  }, 3000);
+    isSending.value = false;
+    isSent.value = true;
+
+    // Reset form and states after 3000ms
+    setTimeout(() => {
+      isSent.value = false;
+      form.name = '';
+      form.email = '';
+      form.message = '';
+    }, 3000);
+  } catch (error) {
+    console.error('Error enviando formulario:', error);
+    isSending.value = false;
+    isError.value = true;
+  }
 };
 </script>
