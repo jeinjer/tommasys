@@ -25,37 +25,47 @@
               <label class="form-label" for="form-name">Tu nombre</label>
               <input 
                 class="form-input" 
+                :class="{ 'form-input-error': errors.name }"
                 type="text" 
                 id="form-name" 
                 v-model="form.name"
+                @input="errors.name = ''"
                 placeholder="Ej: Carlos Martínez" 
                 autocomplete="name" 
-                required 
               />
+              <span v-if="errors.name" class="form-error-text">{{ errors.name }}</span>
             </div>
             <div class="form-group">
               <label class="form-label" for="form-email">Email de trabajo</label>
               <input 
                 class="form-input" 
+                :class="{ 'form-input-error': errors.email }"
                 type="email" 
                 id="form-email" 
                 v-model="form.email"
+                @input="errors.email = ''"
                 placeholder="carlos@empresa.com" 
                 autocomplete="email" 
-                required 
               />
+              <span v-if="errors.email" class="form-error-text">{{ errors.email }}</span>
             </div>
             <div class="form-group">
               <label class="form-label" for="form-message">¿Cuál es tu desafío?</label>
               <textarea 
                 class="form-input form-textarea" 
+                :class="{ 'form-input-error': errors.message }"
                 id="form-message" 
                 v-model="form.message"
+                @input="errors.message = ''"
                 placeholder="Ej: Gestionamos inventario en Excel y necesitamos algo mejor..." 
                 rows="4" 
-                required
               ></textarea>
+              <span v-if="errors.message" class="form-error-text">{{ errors.message }}</span>
             </div>
+            <div v-if="serverError" class="form-server-error" aria-live="polite">
+              {{ serverError }}
+            </div>
+
             <button 
               type="submit" 
               class="btn btn--primary btn--full" 
@@ -83,24 +93,56 @@ const form = reactive({
   message: ''
 });
 
+const errors = reactive({
+  name: '',
+  email: '',
+  message: ''
+});
+
 const isSending = ref(false);
 const isSent = ref(false);
-const isError = ref(false);
+const serverError = ref('');
 
 const buttonText = computed(() => {
   if (isSending.value) return 'Enviando...';
   if (isSent.value) return '¡Mensaje enviado! ✓';
-  if (isError.value) return 'Hubo un error. Reintentar';
   return 'Enviar mensaje';
 });
 
+const validateForm = () => {
+  let valid = true;
+  errors.name = '';
+  errors.email = '';
+  errors.message = '';
+
+  if (!form.name.trim()) {
+    errors.name = 'Por favor ingresá tu nombre.';
+    valid = false;
+  }
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!form.email.trim()) {
+    errors.email = 'Por favor ingresá tu email.';
+    valid = false;
+  } else if (!emailRegex.test(form.email)) {
+    errors.email = 'Por favor ingresá un email válido.';
+    valid = false;
+  }
+
+  if (!form.message.trim()) {
+    errors.message = 'Por favor contanos brevemente tu desafío.';
+    valid = false;
+  }
+
+  return valid;
+};
+
 const handleSubmit = async () => {
-  // Simple validation check
-  if (!form.name || !form.email || !form.message) return;
+  if (!validateForm()) return;
 
   isSending.value = true;
   isSent.value = false;
-  isError.value = false;
+  serverError.value = '';
 
   try {
     const response = await fetch('/api/contact', {
@@ -110,9 +152,16 @@ const handleSubmit = async () => {
       },
       body: JSON.stringify(form)
     });
+    
+    // Check if it's JSON first
+    let data = {};
+    const contentType = response.headers.get("content-type");
+    if (contentType && contentType.indexOf("application/json") !== -1) {
+      data = await response.json();
+    }
 
     if (!response.ok) {
-      throw new Error('Error en el envío');
+      throw new Error(data.error || 'Error al conectar con el servidor.');
     }
 
     isSending.value = false;
@@ -128,7 +177,7 @@ const handleSubmit = async () => {
   } catch (error) {
     console.error('Error enviando formulario:', error);
     isSending.value = false;
-    isError.value = true;
+    serverError.value = error.message || 'Hubo un problema al enviar tu mensaje. Por favor, intentá nuevamente.';
   }
 };
 </script>
