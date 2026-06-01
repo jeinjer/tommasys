@@ -56,25 +56,16 @@
 
 .nav-logo {
   display: flex;
-  align-items: baseline;
-  gap: 0.05em;
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 1.5rem;
-  font-weight: 800;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  align-items: center;
   text-decoration: none;
 }
 
-.logo-mark {
-  color: var(--orange);
-  font-size: 1.75rem;
-  transition: color 0.45s ease;
-}
-
-.logo-text {
-  color: var(--ink);
-  transition: color 0.45s ease;
+.nav-logo-img {
+  height: 32px;
+  width: auto;
+  display: block;
+  transition: filter 0.45s ease;
+  filter: brightness(0) opacity(0.85); /* Monochrome dark logo for light theme */
 }
 
 /* ─── Nav Links (Capsule Effect) ──────────────────────────────────────────── */
@@ -169,8 +160,8 @@ body[data-theme="dark"] .nav-desktop {
   border-color: rgba(255, 255, 255, 0.08);
 }
 
-body[data-theme="dark"] .logo-text {
-  color: #FFFFFF;
+body[data-theme="dark"] .nav-logo-img {
+  filter: none;
 }
 
 body[data-theme="dark"] .nav-link {
@@ -190,9 +181,8 @@ body[data-theme="orange"] .nav-desktop {
   border-color: rgba(255, 255, 255, 0.2);
 }
 
-body[data-theme="orange"] .logo-mark,
-body[data-theme="orange"] .logo-text {
-  color: #FFFFFF;
+body[data-theme="orange"] .nav-logo-img {
+  filter: brightness(0) invert(1);
 }
 
 body[data-theme="orange"] .nav-link {

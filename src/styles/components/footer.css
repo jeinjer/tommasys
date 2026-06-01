@@ -16,22 +16,15 @@
 
 .footer-logo {
   display: flex;
-  align-items: baseline;
-  color: var(--white);
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 1.375rem;
-  font-weight: 800;
-  gap: 0.05em;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  align-items: center;
+  text-decoration: none;
 }
 
-.footer-logo .logo-mark {
-  color: var(--orange);
-}
-
-.footer-logo .logo-text {
-  color: var(--white);
+.footer-logo-img {
+  height: 75px;
+  width: auto;
+  display: block;
+  filter: none; /* Show beautiful original orange + white colors */
 }
 
 .footer-tagline {

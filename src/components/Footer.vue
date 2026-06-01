@@ -3,8 +3,7 @@
     <div class="footer-inner">
       <div class="footer-left">
         <a href="#inicio" class="footer-logo" id="footer-logo">
-          <span class="logo-mark">T.</span>
-          <span class="logo-text">ommasys</span>
+          <img src="../assets/images/ts_logo_footer.svg" alt="Tommasys" class="footer-logo-img" />
         </a>
         <p class="footer-location">Villa Carlos Paz, Argentina</p>
         <div class="footer-socials">
