@@ -1,0 +1,110 @@
+.solutions {
+  padding: 6rem 2rem;
+  background: var(--ink);
+}
+
+.solutions-header {
+  max-width: var(--content-max);
+  margin: 0 auto 3.5rem;
+}
+
+.solutions-header .section-label {
+  color: var(--orange);
+}
+
+.solutions-heading {
+  margin-top: 0.5rem;
+  color: var(--white);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 3.75rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+.solutions-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  max-width: var(--content-max);
+  margin: 0 auto;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.5rem;
+  background: rgba(255, 255, 255, 0.08);
+  gap: 1px;
+}
+
+.solution-card {
+  background: rgba(255, 255, 255, 0.04);
+  transition: background 0.3s var(--ease-snap);
+}
+
+.solution-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.solution-card-inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 2.5rem;
+  gap: 1rem;
+}
+
+.solution-num {
+  color: rgba(255, 255, 255, 0.25);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.solution-title {
+  color: var(--white);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  line-height: 1.15;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.solution-card:hover .solution-title {
+  color: var(--orange);
+}
+
+.solution-desc {
+  flex: 1;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.9375rem;
+  line-height: 1.65;
+}
+
+.solution-tags {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: auto;
+  padding-top: 1rem;
+  gap: 0.5rem;
+}
+
+.tag {
+  padding: 0.3rem 0.875rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--r-pill);
+  color: rgba(255, 255, 255, 0.4);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.solution-card:hover .tag {
+  border-color: rgba(232, 96, 28, 0.4);
+  color: var(--orange);
+}

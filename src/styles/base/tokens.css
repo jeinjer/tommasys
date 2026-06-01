@@ -1,0 +1,16 @@
+:root {
+  --bg: #FFFFFF;
+  --bg-soft: #F7F5F2;
+  --ink: #111111;
+  --ink-muted: #5A5A5A;
+  --orange: #E8601C;
+  --orange-dark: #C44E14;
+  --orange-pale: rgba(232, 96, 28, 0.08);
+  --white: #FFFFFF;
+  --border: rgba(17, 17, 17, 0.10);
+  --nav-h: 72px;
+  --r-pill: 999px;
+  --content-max: 1280px;
+  --ease-snap: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-fluid: cubic-bezier(0.45, 0, 0.55, 1);
+}

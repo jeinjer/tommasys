@@ -1,0 +1,38 @@
+.statement {
+  padding: 7rem 2rem;
+  background: var(--orange);
+  text-align: center;
+}
+
+.statement-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 900px;
+  margin: 0 auto;
+  gap: 2.5rem;
+}
+
+.statement-text {
+  color: var(--white);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 5.75rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.statement-text em {
+  color: var(--ink);
+  font-style: normal;
+}
+
+.statement .btn--primary {
+  background: var(--ink);
+  color: var(--white);
+}
+
+.statement .btn--primary:hover {
+  background: #333333;
+}

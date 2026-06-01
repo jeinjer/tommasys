@@ -1,0 +1,95 @@
+.team {
+  padding: 6rem 2rem;
+}
+
+.team-header {
+  max-width: var(--content-max);
+  margin: 0 auto 3.5rem;
+}
+
+.team-heading {
+  margin-top: 0.5rem;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 3.75rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  max-width: var(--content-max);
+  margin: 0 auto;
+  gap: 1.5rem;
+}
+
+.team-card {
+  overflow: hidden;
+  border: 1.5px solid var(--border);
+  border-radius: 1.5rem;
+  background: var(--white);
+  transition: transform 0.3s var(--ease-snap), box-shadow 0.3s var(--ease-snap);
+}
+
+.team-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 48px rgba(17, 17, 17, 0.1);
+}
+
+.team-card-photo-frame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 220px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-soft);
+}
+
+.team-card-photo--placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: var(--ink);
+}
+
+.team-initials {
+  color: var(--white);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+}
+
+.team-card-info {
+  padding: 1.75rem;
+}
+
+.team-name {
+  margin-bottom: 0.25rem;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.team-role {
+  margin-bottom: 0.875rem;
+  color: var(--orange);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.team-desc {
+  color: var(--ink-muted);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}

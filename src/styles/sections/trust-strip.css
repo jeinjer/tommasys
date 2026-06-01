@@ -1,0 +1,42 @@
+.trust-strip {
+  padding: 2.5rem 2rem;
+  background: var(--ink);
+  color: var(--white);
+}
+
+.trust-strip-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  max-width: var(--content-max);
+  margin: 0 auto;
+  gap: 2rem;
+}
+
+.trust-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  text-align: center;
+}
+
+.trust-number {
+  color: var(--orange);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.trust-label {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.8125rem;
+  font-weight: 500;
+}
+
+.trust-divider {
+  width: 1px;
+  height: 2.5rem;
+  background: rgba(255, 255, 255, 0.12);
+}

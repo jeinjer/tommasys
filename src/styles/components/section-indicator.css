@@ -1,0 +1,25 @@
+#section-indicator {
+  position: fixed;
+  z-index: 90;
+  top: 50%;
+  left: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  pointer-events: none;
+  transform: translateY(-50%);
+}
+
+.sec-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(17, 17, 17, 0.2);
+  transform-origin: center;
+  transition: background 0.4s, transform 0.4s, width 0.4s;
+}
+
+.sec-dot.active {
+  background: var(--orange);
+  transform: scale(1.4);
+}
