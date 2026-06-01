@@ -10,8 +10,23 @@
   >
     <Navigation />
     <main>
-      <Hero />
-      <TrustStrip />
+      <Hero>
+        <template #background>
+          <Particles
+            :particle-count="200"
+            :particle-spread="10"
+            :speed="0.1"
+            :particle-colors="['#ffffff']"
+            :move-particles-on-hover="false"
+            :particle-hover-factor="1"
+            :alpha-particles="false"
+            :particle-base-size="100"
+            :size-randomness="1"
+            :camera-distance="20"
+            :disable-rotation="false"
+          />
+        </template>
+      </Hero>
       <Problem>
         <template #background>
           <Noise 
@@ -58,7 +73,6 @@ import SectionIndicator from '@/components/SectionIndicator.vue';
 
 // Secciones
 import Hero from '@/sections/Hero.vue';
-import TrustStrip from '@/sections/TrustStrip.vue';
 import Problem from '@/sections/Problem.vue';
 import Solutions from '@/sections/Solutions.vue';
 import Process from '@/sections/Process.vue';
@@ -70,10 +84,12 @@ import Contact from '@/sections/Contact.vue';
 import { initReveal } from '@/scripts/modules/reveal.js';
 import { initSectionTheme } from '@/scripts/modules/section-theme.js';
 import { initReducedMotion } from '@/scripts/modules/reduced-motion.js';
+import { initSectionTransitions } from '@/scripts/modules/section-transitions.js';
 
 onMounted(() => {
   initReveal();
   initSectionTheme();
   initReducedMotion();
+  initSectionTransitions();
 });
 </script>

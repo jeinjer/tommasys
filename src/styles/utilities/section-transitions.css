@@ -1,0 +1,64 @@
+/* ─────────────────────────────────────────────────────────────────────────────
+   SECTION TRANSITIONS
+   Clases aplicadas por section-transitions.js
+   ───────────────────────────────────────────────────────────────────────────── */
+
+/* ─── Base de sección ─────────────────────────────────────────────────────── */
+.st-section {
+  /* Todas las secciones arrancan en su estado natural; las transiciones
+     se hacen sobre los elementos internos, no en la sección entera
+     para no romper el scroll ni el background */
+}
+
+/* ─── Elementos internos — estado inicial (oculto / desplazado) ─────────── */
+.st-inner {
+  opacity: 0;
+  transform: translateY(40px) scale(0.98);
+  transition:
+    opacity   1.2s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+/* ─── Elementos internos — visible ───────────────────────────────────────── */
+.st-inner--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   PARALLAX DEL HERO CONTENT
+   (gestionado inline via JS, aquí sólo ponemos la transición base)
+   ───────────────────────────────────────────────────────────────────────────── */
+.hero-content {
+  will-change: transform, opacity;
+  transition: none; /* El JS lo hace en scroll, sin CSS transition para evitar lag */
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   TRANSICIÓN DE FONDO AL CAMBIAR TEMA
+   La nav y los colores del body data-theme se transicionan suavemente
+   ───────────────────────────────────────────────────────────────────────────── */
+body {
+  transition: background-color 0.5s ease;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   REDUCED MOTION — desactivar todo
+   ───────────────────────────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .st-inner {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .st-inner--visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  .hero-content {
+    will-change: auto;
+  }
+}

@@ -11,10 +11,6 @@
             ¿Tenés un proceso<br />que te está frenando?
           </h2>
           <p class="contact-body">Contanos qué está pasando en tu operación. La primera conversación es sin costo y sin compromiso.</p>
-          <div class="contact-info">
-            <a href="mailto:hola@tommasys.com" class="contact-detail" id="contact-email">hola@tommasys.com</a>
-            <span class="contact-detail" id="contact-location">Villa Carlos Paz, Córdoba, Argentina</span>
-          </div>
         </div>
 
         <div class="contact-right">
@@ -70,7 +66,7 @@
               <span class="btn-text">{{ buttonText }}</span>
               <span v-if="!isSending && !isSent" class="btn-icon" aria-hidden="true">→</span>
             </button>
-            <p class="form-disclaimer">Sin spam. Solo nos comunicamos si podemos ayudarte.</p>
+            <p class="form-disclaimer">Nos contactaremos lo antes posible.</p>
           </form>
         </div>
       </div>

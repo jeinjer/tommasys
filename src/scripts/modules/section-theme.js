@@ -1,28 +1,22 @@
 const sectionThemeMap = {
-  hero: 'light',
-  light: 'light',
-  soft: 'light',
-  dark: 'dark',
+  hero:   'light',
+  light:  'light',
+  soft:   'light',
+  dark:   'dark',
   orange: 'orange',
 };
 
 const sectionIds = ['inicio', 'problema', 'soluciones', 'formas', 'equipo', 'contacto'];
 
 function setTheme(theme) {
+  // Eliminar inline styles previos del nav (ahora lo maneja CSS vía data-theme)
   const nav = document.getElementById('nav');
-
-  document.body.setAttribute('data-theme', theme);
-
-  if (!nav) return;
-
-  if (theme === 'orange') {
-    nav.style.background = 'rgba(232,96,28,0.92)';
-    nav.style.borderColor = 'rgba(255,255,255,0.2)';
-    return;
+  if (nav) {
+    nav.style.background = '';
+    nav.style.borderColor = '';
   }
 
-  nav.style.background = '';
-  nav.style.borderColor = '';
+  document.body.setAttribute('data-theme', theme);
 }
 
 function updateDot(sectionId) {
