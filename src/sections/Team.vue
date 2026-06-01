@@ -37,7 +37,7 @@
         <ProfileCard
           name="Stefano Tommasi"
           title="Fundador"
-          skills="Ingeniero en Sistemas, Optimización de Procesos & Arquitectura"
+          skills="Ingeniero en Sistemas, Analista de procesos y Arquitectura"
           linkedin-url="https://linkedin.com/in/stefano-tommasi"
           :avatar-url="stefanoAvatar"
         />
@@ -45,7 +45,7 @@
         <ProfileCard
           name="Rocco Tommasi"
           title="Fundador"
-          skills="Analista en Sistemas, Desarrollo Fullstack & Soluciones Cloud"
+          skills="Analista en Sistemas, Desarrollo Fullstack y Gestión de proyectos"
           linkedin-url="https://linkedin.com/in/rocco-tommasi"
           :avatar-url="roccoAvatar"
         />

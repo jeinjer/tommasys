@@ -5,8 +5,7 @@
       <div class="nav-desktop-inner">
         <div class="nav-left">
           <a href="#inicio" class="nav-logo">
-            <span class="logo-mark">T.</span>
-            <span class="logo-text">ommasys</span>
+            <img src="../assets/images/ts_logo_header.svg" alt="Tommasys" class="nav-logo-img" />
           </a>
         </div>
         

@@ -70,6 +70,10 @@
   line-height: 1.15;
   text-transform: uppercase;
   transition: color 0.3s ease;
+  text-decoration: underline;
+  text-decoration-color: var(--orange);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 6px;
 }
 
 .solution-card:hover .solution-title {
