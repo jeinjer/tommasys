@@ -11,9 +11,9 @@ export default async function handler(req, res) {
       return res.status(400).json({ error: 'Faltan campos obligatorios' });
     }
 
-    // Suponemos que el dominio es tommasys.ar por el email de destino tommasys.ar@gmail.com
-    // Reemplaza "web@tommasys.ar" por el dominio que realmente hayas verificado en Resend.
-    const fromEmail = 'Tommasys Web <web@tommasys.ar>';
+    // Suponemos que el dominio es tommasys.com
+    // Reemplaza "web@tommasys.com" por el dominio que realmente hayas verificado en Resend.
+    const fromEmail = 'Tommasys Web <web@tommasys.com>';
     const toEmail = 'tommasys.ar@gmail.com';
 
     // Hacer petición a Resend
