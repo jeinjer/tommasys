@@ -1,76 +1,63 @@
 <template>
-  <header 
-    class="nav-wrapper" 
-    id="nav" 
-    :style="hasShadow ? { boxShadow: '0 1px 24px rgba(26,26,26,0.08)' } : { boxShadow: 'none' }"
-  >
-    <nav class="nav-inner" aria-label="Navegación principal">
-      <a href="#inicio" class="nav-logo" id="nav-logo-link">
-        <span class="logo-mark">T.</span>
-        <span class="logo-text">ommasys</span>
-      </a>
+  <header class="nav-main-wrapper">
+    <!-- Desktop Header -->
+    <div class="nav-desktop">
+      <div class="nav-desktop-inner">
+        <div class="nav-left">
+          <a href="#inicio" class="nav-logo">
+            <span class="logo-mark">T.</span>
+            <span class="logo-text">ommasys</span>
+          </a>
+        </div>
+        
+        <div class="nav-center">
+          <ul class="nav-links" role="list">
+            <li><a href="#inicio" class="nav-link">Inicio</a></li>
+            <li><a href="#problema" class="nav-link">Problema</a></li>
+            <li><a href="#soluciones" class="nav-link">Soluciones</a></li>
+            <li><a href="#formas" class="nav-link">Proceso</a></li>
+            <li><a href="#equipo" class="nav-link">Nosotros</a></li>
+          </ul>
+        </div>
+        
+        <div class="nav-right">
+          <a href="#contacto" class="nav-link nav-link--cta">Contacto</a>
+        </div>
+      </div>
+    </div>
 
-      <ul class="nav-links" role="list">
-        <li><a href="#inicio" class="nav-link" id="nav-inicio">Inicio</a></li>
-        <li><a href="#soluciones" class="nav-link" id="nav-soluciones">Soluciones</a></li>
-        <li><a href="#formas" class="nav-link" id="nav-formas">Formas de Trabajo</a></li>
-        <li><a href="#equipo" class="nav-link" id="nav-equipo">Equipo</a></li>
-        <li><a href="#contacto" class="nav-link nav-link--cta" id="nav-contacto">Contacto</a></li>
-      </ul>
-
-      <button 
-        class="nav-hamburger" 
-        id="nav-hamburger" 
-        aria-label="Abrir menú" 
-        :aria-expanded="isMenuOpen.toString()"
-        @click="toggleMenu"
-      >
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </nav>
-
-    <div 
-      class="nav-mobile" 
-      id="nav-mobile" 
-      :class="{ open: isMenuOpen }"
-      :aria-hidden="(!isMenuOpen).toString()"
-    >
-      <ul class="nav-mobile-links" role="list">
-        <li><a href="#inicio" class="nav-mobile-link" @click="closeMenu">Inicio</a></li>
-        <li><a href="#soluciones" class="nav-mobile-link" @click="closeMenu">Soluciones</a></li>
-        <li><a href="#formas" class="nav-mobile-link" @click="closeMenu">Formas de Trabajo</a></li>
-        <li><a href="#equipo" class="nav-mobile-link" @click="closeMenu">Equipo</a></li>
-        <li><a href="#contacto" class="nav-mobile-link" @click="closeMenu">Contacto</a></li>
-      </ul>
+    <!-- Mobile Menu -->
+    <div class="nav-mobile">
+      <StaggeredMenu
+        position="right"
+        :items="menuItems"
+        :social-items="socialItems"
+        :display-socials="true"
+        :display-item-numbering="true"
+        menu-button-color="#111"
+        open-menu-button-color="#111"
+        :change-menu-color-on-open="true"
+        :colors="['#111111', '#E8601C']"
+        accent-color="#E8601C"
+      />
     </div>
   </header>
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue';
+import StaggeredMenu from './StaggeredMenu/StaggeredMenu.vue'
 
-const isMenuOpen = ref(false);
-const hasShadow = ref(false);
+const menuItems = [
+ { label: 'Inicio', ariaLabel: 'Ir al inicio', link: '#inicio' },
+ { label: 'Problema', ariaLabel: 'Ver problema', link: '#problema' },
+ { label: 'Soluciones', ariaLabel: 'Ver soluciones', link: '#soluciones' },
+ { label: 'Proceso', ariaLabel: 'Ver formas de trabajo', link: '#formas' },
+ { label: 'Nosotros', ariaLabel: 'Conocer al equipo', link: '#equipo' },
+ { label: 'Contacto', ariaLabel: 'Contactarnos', link: '#contacto' }
+]
 
-const toggleMenu = () => {
-  isMenuOpen.value = !isMenuOpen.value;
-};
-
-const closeMenu = () => {
-  isMenuOpen.value = false;
-};
-
-const handleScroll = () => {
-  hasShadow.value = window.scrollY > 10;
-};
-
-onMounted(() => {
-  window.addEventListener('scroll', handleScroll, { passive: true });
-});
-
-onUnmounted(() => {
-  window.removeEventListener('scroll', handleScroll);
-});
+const socialItems = [
+ { label: 'LinkedIn', link: 'https://linkedin.com' },
+ { label: 'Instagram', link: 'https://instagram.com' }
+]
 </script>

@@ -7,6 +7,19 @@
 
     <!-- Content Wrapper -->
     <div class="section-content-wrapper" style="position: relative; z-index: 2; width: 100%; height: 100%;">
+      <!-- Hook narrativo del caos — antes del grid -->
+      <div class="problem-hook">
+        <p class="problem-hook-text" id="problem-hook" ref="hookRef">
+          <span class="typing-line">{{ typedLine1 }}<span class="cursor" v-if="currentLine === 1">|</span></span>
+          <span class="problem-hook-break typing-line problem-hook-accent">{{ typedLine2 }}<span class="cursor" v-if="currentLine === 2">|</span></span>
+          <span class="problem-hook-break typing-line">{{ typedLine3 }}<span class="cursor" v-if="currentLine === 3">|</span></span>
+          <span class="problem-hook-break typing-line" v-show="showLine4">
+            {{ typedLine4 }}<em class="problem-hook-gray">{{ typedLine4_accent }}</em><span class="cursor" v-if="currentLine === 4" :class="{ 'cursor-blink': !isTyping }">|</span>
+          </span>
+        </p>
+        <div class="problem-hook-rule" aria-hidden="true"></div>
+      </div>
+
       <div class="problem-inner">
         <!-- Left Sticky Panel -->
         <div class="problem-left">
@@ -28,11 +41,7 @@
           <div class="problem-cards-stack">
             <!-- Card 1 -->
             <div class="problem-card" id="problem-card-1">
-              <div class="problem-card-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8zm1-13h-2v6l5.25 3.15 1-1.64-4.25-2.51V7z"/>
-                </svg>
-              </div>
+              <span class="problem-card-num" aria-hidden="true">01</span>
               <div class="problem-card-content">
                 <h3 class="problem-card-title">Fuga de Tiempo</h3>
                 <p class="problem-card-text">Procesos manuales y repetitivos que consumen valiosas horas de tu equipo en tareas que una computadora resolvería en segundos.</p>
@@ -41,11 +50,7 @@
 
             <!-- Card 2 -->
             <div class="problem-card" id="problem-card-2">
-              <div class="problem-card-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M19 3H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2zM5 19V5h14l.002 14H5zM8 7h8v2H8zm0 4h8v2H8zm0 4h5v2H8z"/>
-                </svg>
-              </div>
+              <span class="problem-card-num" aria-hidden="true">02</span>
               <div class="problem-card-content">
                 <h3 class="problem-card-title">Silos de Información</h3>
                 <p class="problem-card-text">Datos críticos dispersos en archivos Excel obsoletos, chats de WhatsApp y correos perdidos sin ningún tipo de estructura ni control.</p>
@@ -54,11 +59,7 @@
 
             <!-- Card 3 -->
             <div class="problem-card" id="problem-card-3">
-              <div class="problem-card-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
-                </svg>
-              </div>
+              <span class="problem-card-num" aria-hidden="true">03</span>
               <div class="problem-card-content">
                 <h3 class="problem-card-title">Fricción Tecnológica</h3>
                 <p class="problem-card-text">Software genérico y costoso que obliga a tu equipo a adaptarse a él, en lugar de modelar tu verdadera dinámica de negocio.</p>
@@ -67,11 +68,7 @@
 
             <!-- Card 4 -->
             <div class="problem-card" id="problem-card-4">
-              <div class="problem-card-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
-                </svg>
-              </div>
+              <span class="problem-card-num" aria-hidden="true">04</span>
               <div class="problem-card-content">
                 <h3 class="problem-card-title">Ceguera Operativa</h3>
                 <p class="problem-card-text">Imposibilidad de tomar decisiones estratégicas fundamentadas debido a la carencia de métricas e información clave en tiempo real.</p>
@@ -84,3 +81,81 @@
     </div>
   </section>
 </template>
+
+<script setup>
+import { onMounted, ref } from 'vue';
+
+const hookRef = ref(null);
+const typedLine1 = ref('');
+const typedLine2 = ref('');
+const typedLine3 = ref('');
+const typedLine4 = ref('');
+const typedLine4_accent = ref('');
+const showLine4 = ref(false);
+const isTyping = ref(false);
+const currentLine = ref(1);
+
+const fullLine1 = "Tu negocio";
+const fullLine2 = "crece,";
+const fullLine3 = "Tu forma de";
+const fullLine4 = "gestionarlo ";
+const fullLine4_accent = "no";
+
+onMounted(() => {
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  
+  if (prefersReducedMotion) {
+    typedLine1.value = fullLine1;
+    typedLine2.value = fullLine2;
+    typedLine3.value = fullLine3;
+    typedLine4.value = fullLine4;
+    typedLine4_accent.value = fullLine4_accent;
+    showLine4.value = true;
+    currentLine.value = 4;
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        startTypewriter();
+        observer.disconnect();
+      }
+    });
+  }, { threshold: 0.3 });
+  
+  if (hookRef.value) {
+    observer.observe(hookRef.value);
+  }
+});
+
+const typeText = async (fullText, targetRef, speed) => {
+  for (let i = 0; i <= fullText.length; i++) {
+    targetRef.value = fullText.slice(0, i);
+    await new Promise(r => setTimeout(r, speed));
+  }
+};
+
+const startTypewriter = async () => {
+  isTyping.value = true;
+  
+  currentLine.value = 1;
+  await typeText(fullLine1, typedLine1, 20);
+  await new Promise(r => setTimeout(r, 50));
+  
+  currentLine.value = 2;
+  await typeText(fullLine2, typedLine2, 20);
+  await new Promise(r => setTimeout(r, 150));
+  
+  currentLine.value = 3;
+  await typeText(fullLine3, typedLine3, 15);
+  await new Promise(r => setTimeout(r, 50));
+
+  currentLine.value = 4;
+  showLine4.value = true;
+  await typeText(fullLine4, typedLine4, 15);
+  await typeText(fullLine4_accent, typedLine4_accent, 30);
+  
+  isTyping.value = false;
+};
+</script>

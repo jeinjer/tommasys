@@ -112,7 +112,7 @@ const cardStyle = computed(() => {
 .custom-profile-card {
   position: relative;
   width: 100%;
-  aspect-ratio: 0.72;
+  height: 100%;
   border-radius: 24px;
   background: #111115; /* Elegant dark background */
   overflow: hidden;
@@ -239,6 +239,8 @@ const cardStyle = computed(() => {
   position: relative;
   width: 160px;
   height: 160px;
+  flex-shrink: 0;
+  aspect-ratio: 1 / 1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -331,7 +333,7 @@ const cardStyle = computed(() => {
 /* Responsive adjustments */
 @media (max-width: 480px) {
   .custom-profile-card {
-    aspect-ratio: 0.75;
+    height: 100%;
   }
   
   .member-name {

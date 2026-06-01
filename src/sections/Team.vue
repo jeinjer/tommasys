@@ -8,25 +8,25 @@
       <div class="team-info-side">
         <p class="section-label">El equipo</p>
         <h2 class="team-heading" id="team-heading">
-          Las personas detrás<br />del código.
+          Código moderno.<br />Trato directo.
         </h2>
         <p class="team-lead-text">
-          Creemos en la ingeniería honesta y la comunicación directa. En Tommasys no delegamos tu proyecto a terceros ni a perfiles junior: diseñamos, programamos y optimizamos cada línea de código nosotros mismos para garantizar que tu sistema sea rápido y escalable.
+          Somos profesionales nativos digitales formados en ingeniería. Nos involucramos personalmente en cada proyecto, combinando la agilidad de las tecnologías más nuevas con las bases sólidas que exige el desarrollo de software a nivel empresarial.
         </p>
         
         <ul class="team-values-list" role="list">
           <li class="value-item">
             <span class="value-icon" aria-hidden="true">✦</span>
             <div class="value-content">
-              <h4 class="value-title">Trato directo con fundadores</h4>
-              <p class="value-desc">Hablás directamente con los arquitectos del sistema, sin teléfonos descompuestos ni demoras operativas.</p>
+              <h4 class="value-title">Agilidad sin burocracia</h4>
+              <p class="value-desc">Hablás directamente con nosotros, quienes escribimos el código. Sin intermediarios ni trabas comerciales, garantizando desarrollos dinámicos y sin demoras.</p>
             </div>
           </li>
           <li class="value-item">
             <span class="value-icon" aria-hidden="true">✦</span>
             <div class="value-content">
-              <h4 class="value-title">Garantía de código propio</h4>
-              <p class="value-desc">Cada desarrollo cuenta con nuestro respaldo técnico directo, asegurando una arquitectura limpia y documentada.</p>
+              <h4 class="value-title">Ingeniería desde la base</h4>
+              <p class="value-desc">Aplicamos herramientas de última generación respaldadas por nuestros estudios en sistemas, para asegurar que tu software sea moderno, rápido y robusto a largo plazo.</p>
             </div>
           </li>
         </ul>

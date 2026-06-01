@@ -14,4 +14,5 @@
 @import url("./components/footer.css");
 @import url("./components/section-indicator.css");
 @import url("./utilities/animations.css");
+@import url("./utilities/section-transitions.css");
 @import url("./utilities/responsive.css");
