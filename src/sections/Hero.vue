@@ -20,7 +20,7 @@
 
     <div class="hero-inner">
 
-      <!-- Fila superior: categoría + ubicación -->
+      <!-- Fila superior: ubicación + año -->
       <div class="hero-meta" aria-hidden="true">
         <span class="hero-meta-item">Villa Carlos Paz, ARG</span>
         <span class="hero-meta-sep hero-meta-sep--right">{{ year }}</span>
@@ -29,21 +29,31 @@
       <!-- Titular principal -->
       <div class="hero-headline-wrap">
         <h1 class="hero-headline" id="hero-headline">
-          <span class="hero-hl-line hero-hl-line--1">Menos <span class="hero-hl-gray">caos</span></span>
-          <span class="hero-hl-line hero-hl-line--2">
-            Más
-            <em class="hero-hl-accent">control</em>
-          </span>
-          <span class="hero-hl-line hero-hl-line--3">Mejores <em class="hero-hl-accent">decisiones</em></span>
+          <span class="hero-hl-line hero-hl-line--1">Menos</span>
+          <span class="hero-hl-line hero-hl-line--2 hero-hl-gray">Caos</span>
+          <span class="hero-hl-line hero-hl-line--3">Más</span>
+          <span class="hero-hl-line hero-hl-line--4 hero-hl-accent">Control</span>
+          <span class="hero-hl-line hero-hl-line--5">Mejores</span>
+          <span class="hero-hl-line hero-hl-line--6 hero-hl-accent">Decisiones</span>
         </h1>
+      </div>
 
-        <!-- Columna lateral derecha -->
-        <aside class="hero-aside">
-          <p class="hero-aside-text">
-            Reemplazamos tus tareas manuales y repetitivas con software diseñado exclusivamente para tu forma de operar.<br>
-            Menos planillas, más resultados.
-          </p>
-        </aside>
+      <!-- Descripción (mobile) -->
+      <p class="hero-mobile-desc">
+        Reemplazamos tus tareas manuales y repetitivas con software diseñado exclusivamente para tu forma de operar.
+        Menos planillas, más resultados.
+      </p>
+
+      <!-- CTA buttons (desktop/tablet only) -->
+      <div class="hero-cta-row">
+        <a href="#contacto" class="hero-cta-primary">
+          Empezá ahora
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"/>
+            <polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </a>
+        <a href="#soluciones" class="hero-cta-secondary">Ver soluciones</a>
       </div>
 
       <!-- Separador inferior -->
@@ -51,8 +61,12 @@
         <span class="hero-rule-accent"></span>
       </div>
 
-      <!-- Fila inferior: stats + scroll hint -->
+      <!-- Fila inferior -->
       <div class="hero-footer-row">
+        <div class="hero-scroll-hint" aria-hidden="true">
+          <span class="hero-scroll-label">Scroll</span>
+          <span class="hero-scroll-line"></span>
+        </div>
       </div>
 
     </div>

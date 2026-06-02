@@ -21,10 +21,65 @@
 }
 
 .footer-logo-img {
-  height: 75px;
+  height: 40px;
   width: auto;
   display: block;
-  filter: none; /* Show beautiful original orange + white colors */
+  filter: brightness(0) invert(1);
+  transition: height 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .footer-logo-img {
+    height: 32px;
+  }
+
+  .footer-inner {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "links socials"
+      "branding branding";
+    gap: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: none;
+  }
+
+  .footer-left {
+    display: contents;
+  }
+
+  .footer-right {
+    grid-area: links;
+  }
+
+  .footer-branding {
+    grid-area: branding;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 2rem;
+    margin-top: 1rem;
+  }
+
+  .footer-socials {
+    grid-area: socials;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 0;
+  }
+
+  .footer-location {
+    text-align: center;
+  }
+
+  .footer-bottom {
+    padding-top: 0;
+  }
+
+  .footer-copy {
+    text-align: center;
+  }
 }
 
 .footer-tagline {

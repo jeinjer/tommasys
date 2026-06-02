@@ -174,7 +174,7 @@ import roccoAvatar from '@/assets/images/rocco.png';
 /* Cards Grid inside Right Column */
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: 1fr;
   gap: 1.5rem;
   width: 100%;
 }
