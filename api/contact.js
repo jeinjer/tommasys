@@ -89,7 +89,7 @@ export default async function handler(req, res) {
     }
 
     // ── Envío con Resend ───────────────────────────────────────────────────
-    const fromEmail = 'Tommasys Web <web@tommasys.ar>';
+    const fromEmail = 'Tommasys Web <web@tommasys.com>';
     const toEmail = 'tommasys.ar@gmail.com';
 
     const response = await fetch('https://api.resend.com/emails', {
@@ -112,7 +112,7 @@ export default async function handler(req, res) {
               ${message.trim().replace(/\n/g, '<br>')}
             </div>
             <hr style="border: none; border-top: 1px solid #eee; margin: 20px 0;" />
-            <p style="color: #666; font-size: 12px;">Enviado desde el formulario de contacto de tommasys.ar</p>
+            <p style="color: #666; font-size: 12px;">Enviado desde el formulario de contacto de tommasys.com</p>
           </div>
         `,
       }),
