@@ -2,10 +2,12 @@
   <footer class="footer" role="contentinfo">
     <div class="footer-inner">
       <div class="footer-left">
-        <a href="#inicio" class="footer-logo" id="footer-logo">
-          <img src="../assets/images/ts_logo_footer.svg" alt="Tommasys" class="footer-logo-img" />
-        </a>
-        <p class="footer-location">Villa Carlos Paz, Argentina</p>
+        <div class="footer-branding">
+          <a href="#inicio" class="footer-logo" id="footer-logo">
+            <img src="../assets/images/ts_logo_footer.svg" alt="Tommasys" class="footer-logo-img" />
+          </a>
+          <p class="footer-location">Villa Carlos Paz, Argentina</p>
+        </div>
         <div class="footer-socials">
           <a href="https://linkedin.com/company/tommasys" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="social-icon">

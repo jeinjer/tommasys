@@ -6,33 +6,21 @@
       :data-position="position"
       :data-open="open || undefined"
     >
-      <div
-        ref="preLayersRef"
-        class="top-0 right-0 bottom-0 z-[5] absolute pointer-events-none sm-prelayers"
-        aria-hidden="true"
-      >
-        <div
-          v-for="(color, index) in processedColors"
-          :key="index"
-          class="top-0 right-0 fixed w-full h-[100vh] translate-x-0 sm-prelayer"
-          :style="{ background: color }"
-        />
-      </div>
+      <!-- Removed preLayers to optimize performance on mobile -->
 
       <header
         class="top-0 left-0 z-[100] fixed flex justify-between items-center bg-transparent p-[2em] w-full pointer-events-none staggered-menu-header"
         aria-label="Main navigation header"
       >
         <div class="flex items-center pointer-events-auto select-none sm-logo" aria-label="Logo">
-          <a href="#inicio" class="nav-logo">
-            <span class="logo-mark">T.</span>
-            <span class="logo-text">ommasys</span>
+          <a href="#inicio" class="nav-logo sm-logo-link">
+            <img src="../../assets/images/ts_logo_header.svg" alt="Tommasys" class="sm-logo-img" />
           </a>
         </div>
 
         <button
           ref="toggleBtnRef"
-          class="inline-flex relative items-center gap-[0.3rem] bg-transparent border-0 overflow-visible font-medium text-[#e9e9ef] leading-none cursor-pointer pointer-events-auto sm-toggle"
+          class="inline-flex relative items-center justify-center w-[44px] h-[44px] bg-transparent border-0 overflow-visible cursor-pointer pointer-events-auto sm-toggle"
           :aria-label="open ? 'Close menu' : 'Open menu'"
           :aria-expanded="open"
           aria-controls="staggered-menu-panel"
@@ -40,29 +28,18 @@
           type="button"
         >
           <span
-            ref="textWrapRef"
-            class="inline-block relative w-[var(--sm-toggle-width,auto)] min-w-[var(--sm-toggle-width,auto)] h-[1em] overflow-hidden whitespace-nowrap sm-toggle-textWrap"
-            aria-hidden="true"
-          >
-            <span ref="textInnerRef" class="flex flex-col leading-none sm-toggle-textInner">
-              <span v-for="(line, index) in textLines" :key="index" class="block h-[1em] leading-none sm-toggle-line">
-                {{ line }}
-              </span>
-            </span>
-          </span>
-
-          <span
             ref="iconRef"
-            class="inline-flex relative justify-center items-center w-[14px] h-[14px] sm-icon shrink-0 [will-change:transform]"
+            class="inline-flex relative justify-center items-center w-[24px] h-[16px] sm-icon shrink-0 [will-change:transform]"
             aria-hidden="true"
           >
+            <!-- Burger lines -->
             <span
               ref="plusHRef"
-              class="top-1/2 left-1/2 absolute bg-current rounded-[2px] w-full h-[2px] -translate-x-1/2 -translate-y-1/2 sm-icon-line [will-change:transform]"
+              class="absolute left-0 bg-current rounded-[2px] w-full h-[2px] sm-icon-line [will-change:transform]"
             />
             <span
               ref="plusVRef"
-              class="top-1/2 left-1/2 absolute bg-current rounded-[2px] w-full h-[2px] -translate-x-1/2 -translate-y-1/2 sm-icon-line sm-icon-line-v [will-change:transform]"
+              class="absolute left-0 bg-current rounded-[2px] w-full h-[2px] sm-icon-line [will-change:transform]"
             />
           </span>
         </button>
@@ -87,7 +64,7 @@
               class="relative overflow-hidden leading-none sm-panel-itemWrap"
             >
               <a
-                class="inline-block relative pr-[1.4em] font-semibold text-[4rem] text-black no-underline uppercase leading-none tracking-[-2px] transition-[background,color] duration-150 ease-linear cursor-pointer sm-panel-item"
+                class="inline-block relative pr-[1.4em] font-semibold text-black no-underline uppercase leading-none tracking-[-1px] transition-[background,color] duration-150 ease-linear cursor-pointer sm-panel-item"
                 :href="item.link"
                 :aria-label="item.ariaLabel"
                 :data-index="idx + 1"
@@ -99,7 +76,7 @@
             </li>
             <li v-else class="relative overflow-hidden leading-none sm-panel-itemWrap" aria-hidden="true">
               <span
-                class="inline-block relative pr-[1.4em] font-semibold text-[4rem] text-black no-underline uppercase leading-none tracking-[-2px] transition-[background,color] duration-150 ease-linear cursor-pointer sm-panel-item"
+                class="inline-block relative pr-[1.4em] font-semibold text-black no-underline uppercase leading-none tracking-[-1px] transition-[background,color] duration-150 ease-linear cursor-pointer sm-panel-item"
               >
                 <span class="inline-block will-change-transform sm-panel-itemLabel [transform-origin:50%_100%]">
                   Sin enlaces
@@ -232,14 +209,12 @@ const initializeGSAP = () => {
     }
     preLayerElsRef.value = preLayers;
 
-    const offscreen = props.position === 'left' ? -100 : 100;
-    gsap.set([panel, ...preLayers], { xPercent: offscreen });
+    gsap.set(panel, { xPercent: offscreen });
 
-    gsap.set(plusH, { transformOrigin: '50% 50%', rotate: 0 });
-    gsap.set(plusV, { transformOrigin: '50% 50%', rotate: 90 });
+    // Initial burger state (2 lines parallel)
+    gsap.set(plusH, { y: -4, rotate: 0, transformOrigin: '50% 50%' });
+    gsap.set(plusV, { y: 4, rotate: 0, transformOrigin: '50% 50%' });
     gsap.set(icon, { rotate: 0, transformOrigin: '50% 50%' });
-
-    gsap.set(textInner, { yPercent: 0 });
 
     if (toggleBtnRef.value) {
       // Color handled by CSS
@@ -266,7 +241,6 @@ const buildOpenTimeline = (): gsap.core.Timeline | null => {
   const socialTitle = panel.querySelector('.sm-socials-title') as HTMLElement | null;
   const socialLinks = Array.from(panel.querySelectorAll('.sm-socials-link')) as HTMLElement[];
 
-  const layerStates = layers.map((el: HTMLElement) => ({ el, start: Number(gsap.getProperty(el, 'xPercent')) }));
   const panelStart = Number(gsap.getProperty(panel, 'xPercent'));
 
   if (itemEls.length) gsap.set(itemEls, { yPercent: 140, rotate: 10 });
@@ -276,13 +250,8 @@ const buildOpenTimeline = (): gsap.core.Timeline | null => {
 
   const tl = gsap.timeline({ paused: true });
 
-  layerStates.forEach((ls: { el: HTMLElement; start: number }, i: number) => {
-    tl.fromTo(ls.el, { xPercent: ls.start }, { xPercent: 0, duration: 0.5, ease: 'power4.out' }, i * 0.07);
-  });
-
-  const lastTime = layerStates.length ? (layerStates.length - 1) * 0.07 : 0;
-  const panelInsertTime = lastTime + (layerStates.length ? 0.08 : 0);
-  const panelDuration = 0.65;
+  const panelInsertTime = 0;
+  const panelDuration = 0.5;
 
   tl.fromTo(
     panel,
@@ -405,14 +374,13 @@ const animateIcon = (opening: boolean) => {
     gsap.set(icon, { rotate: 0, transformOrigin: '50% 50%' });
     spinTweenRef.value = gsap
       .timeline({ defaults: { ease: 'power4.out' } })
-      .to(h, { rotate: 45, duration: 0.5 }, 0)
-      .to(v, { rotate: -45, duration: 0.5 }, 0);
+      .to(h, { y: 0, rotate: 45, duration: 0.4 }, 0)
+      .to(v, { y: 0, rotate: -45, duration: 0.4 }, 0);
   } else {
     spinTweenRef.value = gsap
       .timeline({ defaults: { ease: 'power3.inOut' } })
-      .to(h, { rotate: 0, duration: 0.35 }, 0)
-      .to(v, { rotate: 90, duration: 0.35 }, 0)
-      .to(icon, { rotate: 0, duration: 0.001 }, 0);
+      .to(h, { y: -4, rotate: 0, duration: 0.35 }, 0)
+      .to(v, { y: 4, rotate: 0, duration: 0.35 }, 0);
   }
 };
 
@@ -421,35 +389,7 @@ const animateColor = (opening: boolean) => {
 };
 
 const animateText = (opening: boolean) => {
-  const inner = textInnerRef.value;
-  if (!inner) return;
-
-  textCycleAnimRef.value?.kill();
-
-  const valueLabel = opening ? 'Menú' : 'Cerrar';
-  const targetLabel = opening ? 'Cerrar' : 'Menú';
-  const cycles = 3;
-
-  const seq: string[] = [valueLabel];
-  let last = valueLabel;
-  for (let i = 0; i < cycles; i++) {
-    last = last === 'Menú' ? 'Cerrar' : 'Menú';
-    seq.push(last);
-  }
-  if (last !== targetLabel) seq.push(targetLabel);
-  seq.push(targetLabel);
-
-  textLines.value = seq;
-  gsap.set(inner, { yPercent: 0 });
-
-  const lineCount = seq.length;
-  const finalShift = ((lineCount - 1) / lineCount) * 100;
-
-  textCycleAnimRef.value = gsap.to(inner, {
-    yPercent: -finalShift,
-    duration: 0.5 + lineCount * 0.07,
-    ease: 'power4.out'
-  });
+  // Removed text animation
 };
 
 const toggleMenu = () => {
@@ -525,8 +465,13 @@ onBeforeUnmount(() => {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 2em;
-  background: transparent;
+  padding: 1.5rem 2rem;
+  padding-left: calc(2rem + env(safe-area-inset-left));
+  padding-right: calc(2rem + env(safe-area-inset-right));
+  background: rgba(252, 252, 255, 0.98);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   pointer-events: none;
   z-index: 20;
 }
@@ -597,9 +542,9 @@ onBeforeUnmount(() => {
 
 .sm-scope .sm-icon {
   position: relative;
-  width: 14px;
-  height: 14px;
-  flex: 0 0 14px;
+  width: 24px;
+  height: 16px;
+  flex: 0 0 24px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -614,13 +559,11 @@ onBeforeUnmount(() => {
 
 .sm-scope .sm-icon-line {
   position: absolute;
-  left: 50%;
-  top: 50%;
+  left: 0;
   width: 100%;
   height: 2px;
   background: currentColor;
   border-radius: 2px;
-  transform: translate(-50%, -50%);
   will-change: transform;
 }
 
@@ -638,6 +581,8 @@ onBeforeUnmount(() => {
   display: flex;
   flex-direction: column;
   padding: 6em 2em 2em 2em;
+  padding-left: calc(2em + env(safe-area-inset-left));
+  padding-right: calc(2em + env(safe-area-inset-right));
   overflow-y: auto;
   z-index: 10;
 }
@@ -765,10 +710,10 @@ onBeforeUnmount(() => {
   position: relative;
   color: #000;
   font-weight: 600;
-  font-size: 4rem;
+  font-size: clamp(2rem, 8vw, 3rem);
   cursor: pointer;
-  line-height: 1;
-  letter-spacing: -2px;
+  line-height: 1.1;
+  letter-spacing: -1px;
   text-transform: uppercase;
   transition:
     background 0.25s,

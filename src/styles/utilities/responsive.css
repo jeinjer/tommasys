@@ -1,27 +1,13 @@
 @media (max-width: 1024px) {
-  .hero-headline-wrap {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 2rem;
-    padding: 1.75rem 0 2rem;
-  }
-
-  .hero-aside {
-    max-width: 100%;
-    flex-direction: row;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1rem 2.5rem;
-  }
-
-  .hero-aside-text {
-    flex: 1;
-    min-width: 220px;
+  /* hero padding-top = mobile nav bar height (60px) + safe area */
+  .hero {
+    padding-top: calc(60px + env(safe-area-inset-top, 0px));
   }
 
   .statement-text {
     font-size: 4.25rem;
   }
+
 
   .problem-inner,
   .contact-inner {
@@ -68,32 +54,14 @@
     display: flex;
   }
 
-  .hero-inner {
-    padding: 1.5rem 1.25rem 1rem;
-  }
-
-  .hero-stats {
-    gap: 1.25rem;
-  }
-
-  .hero-stat-num {
-    font-size: 1.05rem;
-  }
 
   .statement-text {
     font-size: 3.25rem;
   }
 
-  .hero-aside {
-    max-width: 100%;
-  }
 
   .hero-scroll-hint {
-    display: none;
-  }
-
-  .hero-actions {
-    flex-direction: column;
+    display: flex;
   }
 
   .problem-heading,
@@ -111,11 +79,12 @@
 
   .team-grid {
     grid-template-columns: 1fr;
+    gap: 2rem;
   }
 
-  .footer-inner {
-    flex-direction: column;
-    gap: 2rem;
+  /* Make background particle effects more subtle on mobile */
+  .section-bg-slot {
+    opacity: 0.5;
   }
 
   .trust-strip-inner {
@@ -125,7 +94,8 @@
 }
 
 @media (max-width: 520px) {
-  .nav-inner,
+  /* Env safe areas for notches */
+  .nav-desktop-inner,
   .hero,
   .trust-strip,
   .problem,
@@ -135,13 +105,19 @@
   .team,
   .contact,
   .footer {
-    padding-right: 1.25rem;
-    padding-left: 1.25rem;
+    padding-right: calc(1.25rem + env(safe-area-inset-right));
+    padding-left: calc(1.25rem + env(safe-area-inset-left));
+  }
+
+  .nav-mobile {
+    padding-right: calc(1rem + env(safe-area-inset-right));
+    padding-left: calc(1rem + env(safe-area-inset-left));
   }
 
   .statement-text {
     font-size: 2.75rem;
   }
+
 
   .problem-heading,
   .solutions-heading,
@@ -149,8 +125,8 @@
   .team-heading,
   .contact-heading {
     font-size: 2.25rem;
+    word-break: break-word; /* Prevent long words from overflowing */
   }
-
 
   #section-indicator {
     display: none;
