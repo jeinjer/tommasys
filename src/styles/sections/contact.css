@@ -90,6 +90,21 @@ a.contact-detail:hover {
   box-shadow: 0 0 0 3px rgba(232, 96, 28, 0.12);
 }
 
+.form-group.has-error .form-input {
+  border-color: var(--orange);
+  box-shadow: 0 0 0 3px rgba(232, 96, 28, 0.12);
+}
+
+.form-error {
+  font-size: 0.8rem;
+  color: var(--orange);
+  font-family: 'Barlow', sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: -0.15rem;
+}
+
 .form-textarea {
   min-height: 120px;
   line-height: 1.6;

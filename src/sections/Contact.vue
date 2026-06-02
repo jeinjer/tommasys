@@ -22,7 +22,7 @@
             @submit.prevent="handleSubmit"
           >
             <!-- ── Honeypot: invisible para humanos, los bots lo llenan ── -->
-            <div class="hp-field" aria-hidden="true">
+            <div class="hp-field" aria-hidden="true" style="position:fixed;left:-9999px;top:-9999px;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none;">
               <label for="hp-company">Company</label>
               <input
                 type="text"
@@ -117,12 +117,6 @@ import { ref, reactive, computed, onMounted, onUnmounted } from 'vue';
 const form = reactive({ name: '', email: '', message: '' });
 const errors = reactive({ name: '', email: '', message: '' });
 const honeypot = ref('');
-
-const errors = reactive({
-  name: '',
-  email: '',
-  message: ''
-});
 
 const isSending = ref(false);
 const isSent = ref(false);
