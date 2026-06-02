@@ -38,9 +38,11 @@
               <label class="form-label" for="form-name">Tu nombre</label>
               <input 
                 class="form-input" 
+                :class="{ 'form-input-error': errors.name }"
                 type="text" 
                 id="form-name" 
                 v-model="form.name"
+                @input="errors.name = ''"
                 placeholder="Ej: Carlos Martínez" 
                 autocomplete="name" 
                 required
@@ -53,9 +55,11 @@
               <label class="form-label" for="form-email">Email de trabajo</label>
               <input 
                 class="form-input" 
+                :class="{ 'form-input-error': errors.email }"
                 type="email" 
                 id="form-email" 
                 v-model="form.email"
+                @input="errors.email = ''"
                 placeholder="carlos@empresa.com" 
                 autocomplete="email" 
                 required
@@ -68,8 +72,10 @@
               <label class="form-label" for="form-message">¿Cuál es tu desafío?</label>
               <textarea 
                 class="form-input form-textarea" 
+                :class="{ 'form-input-error': errors.message }"
                 id="form-message" 
                 v-model="form.message"
+                @input="errors.message = ''"
                 placeholder="Ej: Gestionamos inventario en Excel y necesitamos algo mejor..." 
                 rows="4" 
                 required
@@ -112,9 +118,15 @@ const form = reactive({ name: '', email: '', message: '' });
 const errors = reactive({ name: '', email: '', message: '' });
 const honeypot = ref('');
 
+const errors = reactive({
+  name: '',
+  email: '',
+  message: ''
+});
+
 const isSending = ref(false);
 const isSent = ref(false);
-const isError = ref(false);
+const serverError = ref('');
 
 // ── Rate Limiting (cliente) ─────────────────────────────────────────────────
 const RATE_LIMIT_KEY = 'tommasys_last_contact';
@@ -197,7 +209,6 @@ const buttonText = computed(() => {
   if (isRateLimited.value) return `Esperá ${cooldownLabel.value}`;
   if (isSending.value) return 'Enviando...';
   if (isSent.value) return '¡Mensaje enviado! ✓';
-  if (isError.value) return 'Hubo un error. Reintentar';
   return 'Enviar mensaje';
 });
 
@@ -220,7 +231,7 @@ const handleSubmit = async () => {
 
   isSending.value = true;
   isSent.value = false;
-  isError.value = false;
+  serverError.value = '';
 
   try {
     const response = await fetch('/api/contact', {
@@ -232,6 +243,13 @@ const handleSubmit = async () => {
         message: form.message.trim(),
       }),
     });
+    
+    // Check if it's JSON first
+    let data = {};
+    const contentType = response.headers.get("content-type");
+    if (contentType && contentType.indexOf("application/json") !== -1) {
+      data = await response.json();
+    }
 
     if (!response.ok) {
       const data = await response.json().catch(() => ({}));
@@ -266,7 +284,7 @@ const handleSubmit = async () => {
   } catch (error) {
     console.error('Error enviando formulario:', error);
     isSending.value = false;
-    isError.value = true;
+    serverError.value = error.message || 'Hubo un problema al enviar tu mensaje. Por favor, intentá nuevamente.';
   }
 };
 </script>
