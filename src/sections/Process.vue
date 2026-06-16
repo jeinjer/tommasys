@@ -28,7 +28,7 @@
             <span class="process-num" aria-hidden="true">02</span>
             <h3 class="process-title">Diseño de Solución</h3>
           </div>
-          <p class="process-body">Diseñamos y validamos los prototipos con tu equipo. <strong style="color: var(--ink);">Una vez que acordamos y aprobamos el diseño propuesto, se abona el 50%</strong> para dar inicio formal a la fase de construcción.</p>
+          <p class="process-body">Diseñamos y validamos los prototipos con tu equipo. <strong style="color: var(--ink);">Una vez que acordamos y aprobamos el diseño propuesto, se abona el 50%<span style="color: var(--orange)">*</span></strong> para dar inicio formal a la fase de construcción.</p>
         </div>
 
         <!-- Item 3 -->
@@ -37,7 +37,7 @@
             <span class="process-num" aria-hidden="true">03</span>
             <h3 class="process-title">Desarrollo</h3>
           </div>
-          <p class="process-body">Construimos tu sistema a medida con transparencia total y cero sorpresas. <strong style="color: var(--ink);">El 50% restante se abona únicamente al final del proceso</strong>, una vez que el software está completamente terminado, validado y listo para ser utilizado.</p>
+          <p class="process-body">Construimos tu sistema a medida con transparencia total y cero sorpresas. <strong style="color: var(--ink);">El 50% restante se abona únicamente al final del proceso<span style="color: var(--orange)">*</span></strong>, una vez que el software está completamente terminado, validado y listo para ser utilizado.</p>
         </div>
 
         <!-- Item 4 -->
@@ -48,6 +48,13 @@
           </div>
           <p class="process-body">El día de lanzamiento es solo el comienzo. Acompañamos la adopción, entrenamos a tu equipo y establecemos un canal de comunicación directo. El software que construimos nace para crecer junto a las nuevas demandas de tu negocio.</p>
         </div>
+      </div>
+
+      <div class="process-note">
+        <span class="process-note-asterisk" aria-hidden="true">*</span>
+        <p class="process-note-text">
+          Los costos indicados corresponden a sistemas de pago único. También ofrecemos sistemas con pago mensual, y siempre brindamos 1 semana de prueba sin compromiso.
+        </p>
       </div>
     </div>
   </section>

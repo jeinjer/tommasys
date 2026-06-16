@@ -9,7 +9,7 @@
           </a>
         </div>
         
-        <div class="nav-center">
+        <nav class="nav-center" aria-label="Navegación principal">
           <ul class="nav-links" role="list">
             <li><a href="#inicio" class="nav-link">Inicio</a></li>
             <li><a href="#problema" class="nav-link">Problema</a></li>
@@ -17,7 +17,7 @@
             <li><a href="#formas" class="nav-link">Proceso</a></li>
             <li><a href="#equipo" class="nav-link">Nosotros</a></li>
           </ul>
-        </div>
+        </nav>
         
         <div class="nav-right">
           <a href="#contacto" class="nav-link nav-link--cta">Contacto</a>

@@ -64,8 +64,6 @@
       <!-- Fila inferior -->
       <div class="hero-footer-row">
         <div class="hero-scroll-hint" aria-hidden="true">
-          <span class="hero-scroll-label">Scroll</span>
-          <span class="hero-scroll-line"></span>
         </div>
       </div>
 

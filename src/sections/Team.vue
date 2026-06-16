@@ -18,14 +18,14 @@
           <li class="value-item">
             <span class="value-icon" aria-hidden="true">✦</span>
             <div class="value-content">
-              <h4 class="value-title">Agilidad sin burocracia</h4>
+              <h3 class="value-title">Agilidad sin burocracia</h3>
               <p class="value-desc">Hablás directamente con nosotros, quienes escribimos el código. Sin intermediarios ni trabas comerciales, garantizando desarrollos dinámicos y sin demoras.</p>
             </div>
           </li>
           <li class="value-item">
             <span class="value-icon" aria-hidden="true">✦</span>
             <div class="value-content">
-              <h4 class="value-title">Ingeniería desde la base</h4>
+              <h3 class="value-title">Ingeniería desde la base</h3>
               <p class="value-desc">Aplicamos herramientas de última generación respaldadas por nuestros estudios en sistemas, para asegurar que tu software sea moderno, rápido y robusto a largo plazo.</p>
             </div>
           </li>

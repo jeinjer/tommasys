@@ -81,6 +81,31 @@
   font-family: 'Barlow', sans-serif;
 }
 
+.process-note {
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+  border-top: 1px dashed var(--border);
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-start;
+}
+
+.process-note-asterisk {
+  color: var(--orange);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.process-note-text {
+  margin: 0;
+  color: var(--ink-muted);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  font-family: 'Barlow', sans-serif;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .process {
@@ -99,6 +124,11 @@
   .process-grid {
     grid-template-columns: 1fr;
     gap: 3rem;
+  }
+
+  .process-note {
+    margin-top: 3rem;
+    padding-top: 1.25rem;
   }
 }
 
