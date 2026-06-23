@@ -59,14 +59,26 @@
 
 /* ─── Logo (Fustat Bold) ────────────────────────────────────────────────── */
 
-.nav-logo-text {
-  font-family: 'STIX Two Text', serif;
-  font-weight: 700;
-  font-size: 1.35rem;
-  letter-spacing: -0.02em;
-  color: var(--ink);
+/* ─── Logo ────────────────────────────────────────────────────────────────── */
+
+.nav-logo {
+  display: flex;
+  align-items: center;
   text-decoration: none;
-  transition: color 0.4s ease;
+}
+
+.nav-logo-img {
+  height: 32px;
+  width: auto;
+  display: block;
+  transition: filter 0.45s ease, height 0.3s ease;
+  filter: brightness(0) opacity(0.85); /* Monochrome dark logo for light theme */
+}
+
+@media (max-width: 768px) {
+  .nav-logo-img {
+    height: 24px;
+  }
 }
 
 /* ─── Nav Links (Inter) ──────────────────────────────────────────────────── */
@@ -182,12 +194,8 @@
 }
 
 .nav-mobile-logo {
-  font-family: 'STIX Two Text', serif;
-  font-weight: 700;
-  font-size: 1.25rem;
-  letter-spacing: -0.02em;
-  color: var(--ink);
-  text-decoration: none;
+  display: flex;
+  align-items: center;
 }
 
 /* ─── Burger Button ──────────────────────────────────────────────────────── */
@@ -418,8 +426,8 @@ body[data-theme="dark"] .nav-desktop {
     0px 4px 24px 0px rgba(0, 0, 0, 0.2);
 }
 
-body[data-theme="dark"] .nav-logo-text {
-  color: #ffffff;
+body[data-theme="dark"] .nav-logo-img {
+  filter: none;
 }
 
 body[data-theme="dark"] .nav-link {
@@ -451,8 +459,8 @@ body[data-theme="orange"] .nav-desktop {
     0px 4px 24px 0px rgba(232, 96, 28, 0.15);
 }
 
-body[data-theme="orange"] .nav-logo-text {
-  color: #ffffff;
+body[data-theme="orange"] .nav-logo-img {
+  filter: brightness(0) invert(1);
 }
 
 body[data-theme="orange"] .nav-link {
@@ -484,9 +492,6 @@ body[data-theme="dark"] .nav-mobile-bar {
   border-color: rgba(255, 255, 255, 0.1);
 }
 
-body[data-theme="dark"] .nav-mobile-logo {
-  color: #ffffff;
-}
 
 body[data-theme="dark"] .burger-line {
   background: #ffffff;
@@ -497,9 +502,6 @@ body[data-theme="orange"] .nav-mobile-bar {
   border-color: rgba(255, 255, 255, 0.2);
 }
 
-body[data-theme="orange"] .nav-mobile-logo {
-  color: #ffffff;
-}
 
 body[data-theme="orange"] .burger-line {
   background: #ffffff;

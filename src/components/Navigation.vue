@@ -4,8 +4,8 @@
     <div class="nav-desktop">
       <div class="nav-desktop-inner">
         <div class="nav-left">
-          <a href="#inicio" class="nav-logo-text">
-            Tommasys
+          <a href="#inicio" class="nav-logo">
+            <img src="../assets/images/ts_logo_header.svg" alt="Tommasys" class="nav-logo-img" />
           </a>
         </div>
         
@@ -33,8 +33,8 @@
     <!-- Mobile Header Bar -->
     <div class="nav-mobile">
       <div class="nav-mobile-bar">
-        <a href="#inicio" class="nav-mobile-logo">
-          Tommasys
+        <a href="#inicio" class="nav-logo nav-mobile-logo">
+          <img src="../assets/images/ts_logo_header.svg" alt="Tommasys" class="nav-logo-img" />
         </a>
         <button
           class="burger-btn"

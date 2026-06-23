@@ -17,14 +17,6 @@
         <!-- Left Side: Hero Text & CTA -->
         <div class="hero-left">
           <!-- Social Proof Badge -->
-          <div class="hero-badge">
-            <div class="hero-stars">
-              <svg v-for="i in 5" :key="i" class="hero-star-icon" viewBox="0 0 24 24" fill="#FF801E">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-              </svg>
-            </div>
-            <span class="hero-badge-text">Rated 4.9/5 by 2700+ customers</span>
-          </div>
 
           <!-- Headline -->
           <h1 class="hero-headline" id="hero-headline">
@@ -36,13 +28,13 @@
 
           <!-- Subheadline -->
           <p class="hero-subheadline">
-            Effortlessly manage your projects, collaborate with your team, and achieve your goals with our intuitive task management tool.
+            Desarrollo de software a medida, automatización de procesos y sistemas de gestión para negocios que quieren crecer sin fricciones.
           </p>
 
           <!-- Primary CTA Button -->
           <div class="hero-cta-wrapper">
             <a href="#contacto" class="hero-cta-button">
-              Get Started Now
+              Contactanos
               <span class="hero-cta-arrow-circle">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
                   <line x1="5" y1="12" x2="19" y2="12"/>
