@@ -58,6 +58,7 @@
       <Contact />
     </main>
     <Footer />
+    <WhatsAppFloating />
     <SectionIndicator />
   </ClickSpark>
 </template>
@@ -69,6 +70,7 @@ import Particles from '@/components/Particles/Particles.vue';
 import Noise from '@/components/Noise/Noise.vue';
 import Navigation from '@/components/Navigation.vue';
 import Footer from '@/components/Footer.vue';
+import WhatsAppFloating from '@/components/WhatsAppFloating.vue';
 import SectionIndicator from '@/components/SectionIndicator.vue';
 
 // Secciones

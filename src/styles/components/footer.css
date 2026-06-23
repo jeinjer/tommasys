@@ -108,6 +108,9 @@
 }
 
 /* ─── Mobile ─────────────────────────────────────────────────────────────── */
+.whatsapp-footer-icon {
+  display: none;
+}
 
 @media (max-width: 768px) {
   .footer-logo-img {
@@ -155,6 +158,10 @@
   .footer-socials {
     align-items: flex-end;
     margin-top: 0;
+  }
+
+  .whatsapp-footer-icon {
+    display: flex;
   }
 
   .footer-location {
