@@ -3,74 +3,82 @@
     class="hero"
     id="inicio"
     aria-labelledby="hero-headline"
-    data-section="dark"
-    style="position: relative;"
+    data-section="light"
   >
-    <!-- Background slot — Particles -->
-    <div
-      class="section-bg-slot"
-      style="position: absolute; inset: 0; z-index: 0; pointer-events: none; overflow: hidden;"
-    >
-      <slot name="background" />
+    <!-- Background Glows -->
+    <div class="hero-bg" aria-hidden="true">
+      <div class="hero-glow hero-glow--orange-1"></div>
+      <div class="hero-glow hero-glow--orange-2"></div>
     </div>
 
-    <!-- Overlay: gradiente encima de las partículas para oscurecer bordes y
-         asegurar legibilidad del texto -->
-    <div class="hero-overlay" aria-hidden="true"></div>
+    <!-- Main Content Container -->
+    <div class="hero-container z-10">
+      <div class="hero-content">
+        <!-- Left Side: Hero Text & CTA -->
+        <div class="hero-left">
+          <!-- Social Proof Badge -->
 
-    <div class="hero-inner">
+          <!-- Headline -->
+          <h1 class="hero-headline" id="hero-headline">
+            <span class="hero-hl-line hero-hl-line--1">Tu negocio</span>
+            <span class="hero-hl-line hero-hl-line--2 hero-hl-accent">crece,</span>
+            <span class="hero-hl-line hero-hl-line--3">tu forma de</span>
+            <span class="hero-hl-line hero-hl-line--4">gestionarlo <span class="hero-hl-accent">no.</span></span>
+          </h1>
 
-      <!-- Fila superior: ubicación + año -->
-      <div class="hero-meta" aria-hidden="true">
-        <span class="hero-meta-item">Villa Carlos Paz, ARG</span>
-        <span class="hero-meta-sep hero-meta-sep--right">{{ year }}</span>
-      </div>
+          <!-- Subheadline -->
+          <p class="hero-subheadline">
+            Desarrollo de software a medida, automatización de procesos y sistemas de gestión para negocios que quieren crecer sin fricciones.
+          </p>
 
-      <!-- Titular principal -->
-      <div class="hero-headline-wrap">
-        <h1 class="hero-headline" id="hero-headline">
-          <span class="hero-hl-line hero-hl-line--1">Menos</span>
-          <span class="hero-hl-line hero-hl-line--2 hero-hl-gray">Caos</span>
-          <span class="hero-hl-line hero-hl-line--3">Más</span>
-          <span class="hero-hl-line hero-hl-line--4 hero-hl-accent">Control</span>
-          <span class="hero-hl-line hero-hl-line--5">Mejores</span>
-          <span class="hero-hl-line hero-hl-line--6 hero-hl-accent">Decisiones</span>
-        </h1>
-      </div>
+          <!-- Primary CTA Button -->
+          <div class="hero-cta-wrapper">
+            <a href="#contacto" class="hero-cta-button">
+              Contactános
+              <span class="hero-cta-arrow-circle">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"/>
+                  <polyline points="12 5 19 12 12 19"/>
+                </svg>
+              </span>
+            </a>
+          </div>
+        </div>
 
-      <!-- Descripción (mobile) -->
-      <p class="hero-mobile-desc">
-        Reemplazamos tus tareas manuales y repetitivas con software diseñado exclusivamente para tu forma de operar.
-        Menos planillas, más resultados.
-      </p>
-
-      <!-- CTA buttons (desktop/tablet only) -->
-      <div class="hero-cta-row">
-        <a href="#contacto" class="hero-cta-primary">
-          Empezá ahora
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="5" y1="12" x2="19" y2="12"/>
-            <polyline points="12 5 19 12 12 19"/>
-          </svg>
-        </a>
-        <a href="#soluciones" class="hero-cta-secondary">Ver soluciones</a>
-      </div>
-
-      <!-- Separador inferior -->
-      <div class="hero-rule hero-rule--bottom" aria-hidden="true">
-        <span class="hero-rule-accent"></span>
-      </div>
-
-      <!-- Fila inferior -->
-      <div class="hero-footer-row">
-        <div class="hero-scroll-hint" aria-hidden="true">
+        <!-- Right Side: The Glassy Orb -->
+        <div class="hero-right">
+          <div class="glassy-orb-container">
+            <video
+              class="glassy-orb-video"
+              src="https://future.co/images/homepage/glassy-orb/orb-purple.webm"
+              autoplay
+              loop
+              muted
+              playsinline
+            ></video>
+          </div>
         </div>
       </div>
 
+      <!-- Bottom Partners Section -->
+      <div class="hero-partners">
+        <h3 class="hero-partners-title">Ellos confían en nosotros</h3>
+        <div class="hero-partners-logos">
+          <img :src="logoMurolo" alt="Murolo" class="partner-logo-img" />
+          <a href="https://www.shortcirkuit.com/" target="_blank" rel="noopener noreferrer" aria-label="Visitar Shortcirkuit">
+            <img :src="logoShortcirkuit" alt="Shortcirkuit" class="partner-logo-img" />
+          </a>
+          <a href="https://scarpatidomaindia.com/" target="_blank" rel="noopener noreferrer" aria-label="Visitar Scarpati Doma India">
+            <img :src="logoScarpati" alt="Scarpati" class="partner-logo-img" />
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 </template>
 
 <script setup>
-const year = new Date().getFullYear();
+import logoMurolo from '@/assets/images/murolo.webp';
+import logoShortcirkuit from '@/assets/images/shortcirkuit.webp';
+import logoScarpati from '@/assets/images/scarpati.webp';
 </script>

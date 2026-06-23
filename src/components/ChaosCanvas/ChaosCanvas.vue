@@ -147,7 +147,7 @@ function drawLabel(ctx, p) {
   ctx.translate(p.x, p.y);
   ctx.rotate(p.rotation);
   ctx.globalAlpha = p.opacity * 0.55;
-  ctx.font = `600 ${p.fontSize}px 'Barlow Condensed', monospace`;
+  ctx.font = `600 ${p.fontSize}px 'Saira', sans-serif`;
   ctx.fillStyle = p.fill.replace(/[\d.]+\)$/, '0.6)');
   ctx.letterSpacing = '0.04em';
   ctx.fillText(p.label, -ctx.measureText(p.label).width / 2, p.fontSize / 3);

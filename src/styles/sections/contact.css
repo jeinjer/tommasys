@@ -16,9 +16,9 @@
 .contact-heading {
   margin-top: 0.5rem;
   margin-bottom: 1rem;
-  font-family: 'Barlow Condensed', sans-serif;
+  font-family: 'STIX Two Text', serif;
   font-size: 3.5rem;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: 0;
   line-height: 1.05;
   text-transform: uppercase;
@@ -62,7 +62,7 @@ a.contact-detail:hover {
 
 .form-label {
   color: var(--ink);
-  font-family: 'Barlow Condensed', sans-serif;
+  font-family: 'Saira', sans-serif;
   font-size: 0.875rem;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -75,7 +75,7 @@ a.contact-detail:hover {
   border-radius: 0.75rem;
   background: var(--bg-soft);
   color: var(--ink);
-  font-family: 'Barlow', sans-serif;
+  font-family: 'Saira', sans-serif;
   font-size: 0.9375rem;
   outline: none;
   transition: border-color 0.2s, box-shadow 0.2s;
@@ -98,7 +98,7 @@ a.contact-detail:hover {
 .form-error {
   font-size: 0.8rem;
   color: var(--orange);
-  font-family: 'Barlow', sans-serif;
+  font-family: 'Saira', sans-serif;
   display: flex;
   align-items: center;
   gap: 0.35rem;

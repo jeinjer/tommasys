@@ -15,9 +15,9 @@
 .solutions-heading {
   margin-top: 0.5rem;
   color: var(--white);
-  font-family: 'Barlow Condensed', sans-serif;
+  font-family: 'STIX Two Text', serif;
   font-size: 3.75rem;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: 0;
   line-height: 1.05;
   text-transform: uppercase;
@@ -54,7 +54,7 @@
 
 .solution-num {
   color: rgba(255, 255, 255, 0.25);
-  font-family: 'Barlow Condensed', sans-serif;
+  font-family: 'Saira', sans-serif;
   font-size: 0.875rem;
   font-weight: 700;
   letter-spacing: 0.18em;
@@ -63,9 +63,9 @@
 
 .solution-title {
   color: var(--white);
-  font-family: 'Barlow Condensed', sans-serif;
+  font-family: 'STIX Two Text', serif;
   font-size: 1.5rem;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: 0.02em;
   line-height: 1.15;
   text-transform: uppercase;
@@ -100,7 +100,7 @@
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: var(--r-pill);
   color: rgba(255, 255, 255, 0.4);
-  font-family: 'Barlow Condensed', sans-serif;
+  font-family: 'Saira', sans-serif;
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.08em;

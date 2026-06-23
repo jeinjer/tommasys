@@ -16,7 +16,9 @@
 	},
 	"devDependencies": {
 		"@vitejs/plugin-vue": "^5.0.5",
+		"jimp": "^1.6.1",
 		"jsrepo": "^3.7.0",
+		"sharp": "^0.35.2",
 		"vite": "^5.2.11"
 	}
 }
