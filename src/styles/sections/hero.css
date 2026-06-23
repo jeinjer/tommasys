@@ -282,18 +282,18 @@
 }
 
 .partner-logo-img {
-  height: 44px;
+  height: 80px;
   width: auto;
-  max-width: 160px;
+  max-width: 240px;
   object-fit: contain;
-  filter: grayscale(100%) opacity(0.55);
+  filter: grayscale(100%) brightness(0.8) contrast(1.8) opacity(0.9);
   mix-blend-mode: multiply;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .partner-logo-img:hover {
-  filter: grayscale(0%) opacity(1);
-  transform: translateY(-3px) scale(1.04);
+  filter: grayscale(0%) brightness(1) contrast(1) opacity(1);
+  transform: translateY(-4px) scale(1.06);
 }
 
 /* ─── Responsive Styles ──────────────────────────────────────────────────── */
@@ -336,6 +336,11 @@
   .hero-partners-logos {
     gap: 50px;
   }
+
+  .partner-logo-img {
+    height: 60px;
+    max-width: 200px;
+  }
 }
 
 @media (max-width: 600px) {
@@ -369,6 +374,7 @@
   }
 
   .partner-logo-img {
-    height: 32px;
+    height: 44px;
+    max-width: 150px;
   }
 }

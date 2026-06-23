@@ -38,7 +38,7 @@
           name="Stefano Tommasi"
           title="Fundador"
           skills="Ingeniero en Sistemas, Analista de procesos y Arquitectura"
-          linkedin-url="https://linkedin.com/in/stefano-tommasi"
+          linkedin-url="https://linkedin.com/in/stefanotommasi15"
           :avatar-url="stefanoAvatar"
         />
 

@@ -62,7 +62,7 @@
 
       <!-- Bottom Partners Section -->
       <div class="hero-partners">
-        <h3 class="hero-partners-title">Empresas que confían en nosotros</h3>
+        <h3 class="hero-partners-title">Ellos confían en nosotros</h3>
         <div class="hero-partners-logos">
           <img :src="logoMurolo" alt="Murolo" class="partner-logo-img" />
           <img :src="logoShortcirkuit" alt="Shortcirkuit" class="partner-logo-img" />
