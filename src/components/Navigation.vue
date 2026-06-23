@@ -131,7 +131,7 @@ const sidebarOpen = ref(false)
 const year = new Date().getFullYear()
 
 const menuItems = [
-  { label: 'Inicio',     link: '#problema' },
+  { label: 'Problemas',  link: '#problema' },
   { label: 'Soluciones', link: '#soluciones' },
   { label: 'Proceso',    link: '#formas' },
   { label: 'Nosotros',   link: '#equipo' },
