@@ -281,16 +281,19 @@
   flex-wrap: wrap;
 }
 
-.partner-logo {
-  height: 28px;
+.partner-logo-img {
+  height: 44px;
   width: auto;
-  color: rgba(17, 17, 17, 0.3);
-  transition: all 0.3s ease;
+  max-width: 160px;
+  object-fit: contain;
+  filter: grayscale(100%) opacity(0.55);
+  mix-blend-mode: multiply;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.partner-logo:hover {
-  color: rgba(17, 17, 17, 0.8);
-  transform: translateY(-2px);
+.partner-logo-img:hover {
+  filter: grayscale(0%) opacity(1);
+  transform: translateY(-3px) scale(1.04);
 }
 
 /* ─── Responsive Styles ──────────────────────────────────────────────────── */
@@ -365,7 +368,7 @@
     gap: 40px 30px;
   }
 
-  .partner-logo {
-    height: 22px;
+  .partner-logo-img {
+    height: 32px;
   }
 }

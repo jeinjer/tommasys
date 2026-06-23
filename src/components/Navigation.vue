@@ -11,8 +11,8 @@
         
         <nav class="nav-center" aria-label="Navegación principal">
           <ul class="nav-links" role="list">
-            <li><a href="#problema" class="nav-link">Inicio</a></li>
-            <li><a href="#soluciones" class="nav-link">Soluciones</a></li>
+            <li><a href="#problema" class="nav-link">Problema</a></li>
+            <li><a href="#soluciones" class="nav-link">Solución</a></li>
             <li><a href="#formas" class="nav-link">Proceso</a></li>
             <li><a href="#equipo" class="nav-link">Nosotros</a></li>
           </ul>
