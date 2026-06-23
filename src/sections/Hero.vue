@@ -65,8 +65,12 @@
         <h3 class="hero-partners-title">Ellos confían en nosotros</h3>
         <div class="hero-partners-logos">
           <img :src="logoMurolo" alt="Murolo" class="partner-logo-img" />
-          <img :src="logoShortcirkuit" alt="Shortcirkuit" class="partner-logo-img" />
-          <img :src="logoScarpati" alt="Scarpati" class="partner-logo-img" />
+          <a href="https://www.shortcirkuit.com/" target="_blank" rel="noopener noreferrer" aria-label="Visitar Shortcirkuit">
+            <img :src="logoShortcirkuit" alt="Shortcirkuit" class="partner-logo-img" />
+          </a>
+          <a href="https://scarpatidomaindia.com/" target="_blank" rel="noopener noreferrer" aria-label="Visitar Scarpati Doma India">
+            <img :src="logoScarpati" alt="Scarpati" class="partner-logo-img" />
+          </a>
         </div>
       </div>
     </div>

@@ -281,6 +281,13 @@
   flex-wrap: wrap;
 }
 
+.hero-partners-logos a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
 .partner-logo-img {
   height: 80px;
   width: auto;
