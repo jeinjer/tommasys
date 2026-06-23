@@ -3,7 +3,7 @@
     class="hero"
     id="inicio"
     aria-labelledby="hero-headline"
-    data-section="dark"
+    data-section="light"
   >
     <!-- Background Glows -->
     <div class="hero-bg" aria-hidden="true">
