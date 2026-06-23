@@ -11,7 +11,7 @@
         
         <nav class="nav-center" aria-label="Navegación principal">
           <ul class="nav-links" role="list">
-            <li><a href="#inicio" class="nav-link">Inicio</a></li>
+            <li><a href="#problema" class="nav-link">Inicio</a></li>
             <li><a href="#soluciones" class="nav-link">Soluciones</a></li>
             <li><a href="#formas" class="nav-link">Proceso</a></li>
             <li><a href="#equipo" class="nav-link">Nosotros</a></li>
@@ -131,7 +131,7 @@ const sidebarOpen = ref(false)
 const year = new Date().getFullYear()
 
 const menuItems = [
-  { label: 'Inicio',     link: '#inicio' },
+  { label: 'Inicio',     link: '#problema' },
   { label: 'Soluciones', link: '#soluciones' },
   { label: 'Proceso',    link: '#formas' },
   { label: 'Nosotros',   link: '#equipo' },
