@@ -28,7 +28,10 @@
 
           <!-- Headline -->
           <h1 class="hero-headline" id="hero-headline">
-            Work smarter,<br>achieve faster
+            <span class="hero-hl-line hero-hl-line--1">Tu negocio</span>
+            <span class="hero-hl-line hero-hl-line--2 hero-hl-accent">crece,</span>
+            <span class="hero-hl-line hero-hl-line--3">tu forma de</span>
+            <span class="hero-hl-line hero-hl-line--4">gestionarlo <span class="hero-hl-accent">no.</span></span>
           </h1>
 
           <!-- Subheadline -->

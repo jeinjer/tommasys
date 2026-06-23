@@ -120,6 +120,46 @@
   margin-bottom: 1.5rem;
 }
 
+.hero-hl-line {
+  display: block;
+}
+
+.hero-hl-line--1 {
+  opacity: 0;
+  animation: heroLineIn 0.8s var(--ease-snap) 0.1s forwards;
+}
+
+.hero-hl-line--2 {
+  opacity: 0;
+  animation: heroLineIn 0.8s var(--ease-snap) 0.25s forwards;
+}
+
+.hero-hl-line--3 {
+  opacity: 0;
+  animation: heroLineIn 0.8s var(--ease-snap) 0.4s forwards;
+}
+
+.hero-hl-line--4 {
+  opacity: 0;
+  animation: heroLineIn 0.8s var(--ease-snap) 0.55s forwards;
+}
+
+.hero-hl-accent {
+  color: var(--orange);
+  font-style: italic;
+}
+
+@keyframes heroLineIn {
+  from {
+    opacity: 0;
+    transform: translateY(0.6em) skewY(1deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) skewY(0deg);
+  }
+}
+
 /* Subheadline */
 .hero-subheadline {
   font-family: 'Saira', sans-serif;
