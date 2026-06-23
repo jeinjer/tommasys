@@ -109,9 +109,9 @@ import roccoAvatar from '@/assets/images/rocco.png';
 
 .team-heading {
   margin-top: 0.5rem;
-  font-family: 'Barlow Condensed', sans-serif;
+  font-family: 'STIX Two Text', serif;
   font-size: 3.75rem;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: 0;
   line-height: 1.05;
   text-transform: uppercase;
@@ -119,7 +119,7 @@ import roccoAvatar from '@/assets/images/rocco.png';
 }
 
 .team-lead-text {
-  font-family: 'Barlow', sans-serif;
+  font-family: 'Saira', sans-serif;
   font-size: 1.1rem;
   color: var(--ink-muted);
   line-height: 1.6;
@@ -154,7 +154,7 @@ import roccoAvatar from '@/assets/images/rocco.png';
 }
 
 .value-title {
-  font-family: 'Barlow Condensed', sans-serif;
+  font-family: 'STIX Two Text', serif;
   font-size: 1.15rem;
   font-weight: 700;
   color: var(--ink);
@@ -164,7 +164,7 @@ import roccoAvatar from '@/assets/images/rocco.png';
 }
 
 .value-desc {
-  font-family: 'Barlow', sans-serif;
+  font-family: 'Saira', sans-serif;
   font-size: 0.925rem;
   color: var(--ink-muted);
   line-height: 1.5;

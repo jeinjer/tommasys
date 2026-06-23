@@ -195,9 +195,9 @@ const cardStyle = computed(() => {
 }
 
 .member-name {
-  font-family: 'Barlow Condensed', sans-serif;
+  font-family: 'STIX Two Text', serif;
   font-size: 2.25rem;
-  font-weight: 800;
+  font-weight: 700;
   color: #ffffff;
   text-transform: uppercase;
   letter-spacing: 0.02em;
@@ -207,7 +207,7 @@ const cardStyle = computed(() => {
 }
 
 .member-role {
-  font-family: 'Barlow Condensed', sans-serif;
+  font-family: 'Saira', sans-serif;
   font-size: 0.95rem;
   font-weight: 700;
   color: #e8601c; /* Brand orange */
@@ -225,7 +225,7 @@ const cardStyle = computed(() => {
 }
 
 .member-skills {
-  font-family: 'Barlow', sans-serif;
+  font-family: 'Saira', sans-serif;
   font-size: 0.85rem;
   color: rgba(255, 255, 255, 0.6);
   line-height: 1.4;
@@ -295,7 +295,7 @@ const cardStyle = computed(() => {
   border-radius: 50px;
   padding: 0.6rem 1.25rem;
   color: rgba(255, 255, 255, 0.8);
-  font-family: 'Barlow', sans-serif;
+  font-family: 'Saira', sans-serif;
   font-size: 0.85rem;
   font-weight: 600;
   text-decoration: none;
