@@ -102,7 +102,7 @@
 }
 
 .hero-badge-text {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Saira', sans-serif;
   font-size: 0.85rem;
   font-weight: 550;
   color: rgba(17, 17, 17, 0.7);
@@ -111,18 +111,18 @@
 
 /* Headline */
 .hero-headline {
-  font-family: 'Fustat', sans-serif;
-  font-weight: 800;
+  font-family: 'STIX Two Text', serif;
+  font-weight: 700;
   font-size: clamp(3rem, 5.2vw, 75px);
   line-height: 1.05;
-  letter-spacing: -2px;
+  letter-spacing: -1.5px;
   color: #111111;
   margin-bottom: 1.5rem;
 }
 
 /* Subheadline */
 .hero-subheadline {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Saira', sans-serif;
   font-size: 1.125rem; /* 18px */
   line-height: 1.6;
   letter-spacing: -0.8px;
@@ -141,7 +141,7 @@
   backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(2px);
   color: #ffffff;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Saira', sans-serif;
   font-size: 1.0625rem;
   font-weight: 600;
   border-radius: 16px;
@@ -224,7 +224,7 @@
 }
 
 .hero-partners-title {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Saira', sans-serif;
   font-size: 0.8rem;
   font-weight: 600;
   text-transform: uppercase;
