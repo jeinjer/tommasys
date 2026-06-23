@@ -30,13 +30,13 @@
 
 .footer-tagline {
   margin-top: 0.75rem;
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(255, 255, 255, 0.8);
   font-size: 0.9375rem;
 }
 
 .footer-location {
   margin-top: 0.5rem;
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.6);
   font-size: 0.8125rem;
 }
 
@@ -47,7 +47,7 @@
 }
 
 .footer-link {
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(255, 255, 255, 0.85);
   font-family: 'Saira', sans-serif;
   font-size: 1rem;
   font-weight: 700;
@@ -67,7 +67,7 @@
 }
 
 .footer-copy {
-  color: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.45);
   font-size: 0.8125rem;
   text-align: center;
 }
@@ -81,7 +81,7 @@
 }
 
 .social-link {
-  color: rgba(255, 255, 255, 0.35);
+  color: rgba(255, 255, 255, 0.7);
   transition: color 0.2s, transform 0.2s;
   display: flex;
   align-items: center;

@@ -3,7 +3,7 @@
     class="hero"
     id="inicio"
     aria-labelledby="hero-headline"
-    data-section="light"
+    data-section="dark"
   >
     <!-- Background Glows -->
     <div class="hero-bg" aria-hidden="true">
@@ -34,7 +34,7 @@
           <!-- Primary CTA Button -->
           <div class="hero-cta-wrapper">
             <a href="#contacto" class="hero-cta-button">
-              Contactanos
+              Contactános
               <span class="hero-cta-arrow-circle">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
                   <line x1="5" y1="12" x2="19" y2="12"/>
