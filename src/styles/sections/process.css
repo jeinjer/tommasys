@@ -14,9 +14,9 @@
 }
 
 .process-heading {
-  font-family: 'Barlow Condensed', sans-serif;
+  font-family: 'STIX Two Text', serif;
   font-size: 4rem;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: 0;
   line-height: 1.1;
   text-transform: uppercase;
@@ -51,7 +51,7 @@
 
 .process-num {
   color: var(--orange);
-  font-family: 'Barlow Condensed', sans-serif;
+  font-family: 'Saira', sans-serif;
   font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: 0.05em;
@@ -65,9 +65,9 @@
 
 .process-title {
   margin: 0;
-  font-family: 'Barlow Condensed', sans-serif;
+  font-family: 'STIX Two Text', serif;
   font-size: 1.75rem;
-  font-weight: 800;
+  font-weight: 700;
   color: var(--ink);
   letter-spacing: 0.02em;
   text-transform: uppercase;
@@ -78,7 +78,7 @@
   color: var(--ink-muted);
   font-size: 1.125rem;
   line-height: 1.6;
-  font-family: 'Barlow', sans-serif;
+  font-family: 'Saira', sans-serif;
 }
 
 .process-note {
@@ -92,7 +92,7 @@
 
 .process-note-asterisk {
   color: var(--orange);
-  font-family: 'Barlow Condensed', sans-serif;
+  font-family: 'Saira', sans-serif;
   font-size: 1.25rem;
   font-weight: 700;
   line-height: 1.2;
@@ -103,7 +103,7 @@
   color: var(--ink-muted);
   font-size: 0.9375rem;
   line-height: 1.5;
-  font-family: 'Barlow', sans-serif;
+  font-family: 'Saira', sans-serif;
 }
 
 /* Responsive adjustments */

@@ -26,9 +26,9 @@
 
 .problem-heading {
   margin-top: 0.5rem;
-  font-family: 'Barlow Condensed', sans-serif;
+  font-family: 'STIX Two Text', serif;
   font-size: 3.75rem;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: 0;
   line-height: 1.05;
   text-transform: uppercase;
@@ -59,7 +59,7 @@
 }
 
 .metric-num {
-  font-family: 'Barlow Condensed', sans-serif;
+  font-family: 'Saira', sans-serif;
   font-size: 3.25rem;
   font-weight: 800;
   color: var(--orange);
@@ -99,7 +99,7 @@
 
 .problem-card-num {
   flex-shrink: 0;
-  font-family: 'Barlow Condensed', sans-serif;
+  font-family: 'Saira', sans-serif;
   font-size: 1.5rem;
   font-weight: 800;
   color: var(--ink-muted);
@@ -116,9 +116,9 @@
 }
 
 .problem-card-title {
-  font-family: 'Barlow Condensed', sans-serif;
+  font-family: 'STIX Two Text', serif;
   font-size: 1.35rem;
-  font-weight: 800;
+  font-weight: 700;
   color: var(--ink);
   text-transform: uppercase;
   margin: 0 0 0.35rem;

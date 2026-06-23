@@ -9,9 +9,9 @@
 
 .team-heading {
   margin-top: 0.5rem;
-  font-family: 'Barlow Condensed', sans-serif;
+  font-family: 'STIX Two Text', serif;
   font-size: 3.75rem;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: 0;
   line-height: 1.05;
   text-transform: uppercase;
@@ -59,7 +59,7 @@
 
 .team-initials {
   color: var(--white);
-  font-family: 'Barlow Condensed', sans-serif;
+  font-family: 'Saira', sans-serif;
   font-size: 1.75rem;
   font-weight: 800;
   letter-spacing: 0.05em;
@@ -71,9 +71,9 @@
 
 .team-name {
   margin-bottom: 0.25rem;
-  font-family: 'Barlow Condensed', sans-serif;
+  font-family: 'STIX Two Text', serif;
   font-size: 1.25rem;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: 0.03em;
   text-transform: uppercase;
 }
@@ -81,7 +81,7 @@
 .team-role {
   margin-bottom: 0.875rem;
   color: var(--orange);
-  font-family: 'Barlow Condensed', sans-serif;
+  font-family: 'Saira', sans-serif;
   font-size: 0.8125rem;
   font-weight: 700;
   letter-spacing: 0.1em;

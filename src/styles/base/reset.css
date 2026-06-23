@@ -14,7 +14,7 @@ html {
 body {
   background: var(--bg);
   color: var(--ink);
-  font-family: 'Barlow', sans-serif;
+  font-family: 'Saira', sans-serif;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
