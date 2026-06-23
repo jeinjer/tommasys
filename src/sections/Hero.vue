@@ -3,74 +3,106 @@
     class="hero"
     id="inicio"
     aria-labelledby="hero-headline"
-    data-section="dark"
-    style="position: relative;"
+    data-section="light"
   >
-    <!-- Background slot — Particles -->
-    <div
-      class="section-bg-slot"
-      style="position: absolute; inset: 0; z-index: 0; pointer-events: none; overflow: hidden;"
-    >
-      <slot name="background" />
+    <!-- Background Glows -->
+    <div class="hero-bg" aria-hidden="true">
+      <div class="hero-glow hero-glow--orange-1"></div>
+      <div class="hero-glow hero-glow--orange-2"></div>
     </div>
 
-    <!-- Overlay: gradiente encima de las partículas para oscurecer bordes y
-         asegurar legibilidad del texto -->
-    <div class="hero-overlay" aria-hidden="true"></div>
+    <!-- Main Content Container -->
+    <div class="hero-container z-10">
+      <div class="hero-content">
+        <!-- Left Side: Hero Text & CTA -->
+        <div class="hero-left">
+          <!-- Social Proof Badge -->
+          <div class="hero-badge">
+            <div class="hero-stars">
+              <svg v-for="i in 5" :key="i" class="hero-star-icon" viewBox="0 0 24 24" fill="#FF801E">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+              </svg>
+            </div>
+            <span class="hero-badge-text">Rated 4.9/5 by 2700+ customers</span>
+          </div>
 
-    <div class="hero-inner">
+          <!-- Headline -->
+          <h1 class="hero-headline" id="hero-headline">
+            Work smarter,<br>achieve faster
+          </h1>
 
-      <!-- Fila superior: ubicación + año -->
-      <div class="hero-meta" aria-hidden="true">
-        <span class="hero-meta-item">Villa Carlos Paz, ARG</span>
-        <span class="hero-meta-sep hero-meta-sep--right">{{ year }}</span>
-      </div>
+          <!-- Subheadline -->
+          <p class="hero-subheadline">
+            Effortlessly manage your projects, collaborate with your team, and achieve your goals with our intuitive task management tool.
+          </p>
 
-      <!-- Titular principal -->
-      <div class="hero-headline-wrap">
-        <h1 class="hero-headline" id="hero-headline">
-          <span class="hero-hl-line hero-hl-line--1">Menos</span>
-          <span class="hero-hl-line hero-hl-line--2 hero-hl-gray">Caos</span>
-          <span class="hero-hl-line hero-hl-line--3">Más</span>
-          <span class="hero-hl-line hero-hl-line--4 hero-hl-accent">Control</span>
-          <span class="hero-hl-line hero-hl-line--5">Mejores</span>
-          <span class="hero-hl-line hero-hl-line--6 hero-hl-accent">Decisiones</span>
-        </h1>
-      </div>
+          <!-- Primary CTA Button -->
+          <div class="hero-cta-wrapper">
+            <a href="#contacto" class="hero-cta-button">
+              Get Started Now
+              <span class="hero-cta-arrow-circle">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"/>
+                  <polyline points="12 5 19 12 12 19"/>
+                </svg>
+              </span>
+            </a>
+          </div>
+        </div>
 
-      <!-- Descripción (mobile) -->
-      <p class="hero-mobile-desc">
-        Reemplazamos tus tareas manuales y repetitivas con software diseñado exclusivamente para tu forma de operar.
-        Menos planillas, más resultados.
-      </p>
-
-      <!-- CTA buttons (desktop/tablet only) -->
-      <div class="hero-cta-row">
-        <a href="#contacto" class="hero-cta-primary">
-          Empezá ahora
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="5" y1="12" x2="19" y2="12"/>
-            <polyline points="12 5 19 12 12 19"/>
-          </svg>
-        </a>
-        <a href="#soluciones" class="hero-cta-secondary">Ver soluciones</a>
-      </div>
-
-      <!-- Separador inferior -->
-      <div class="hero-rule hero-rule--bottom" aria-hidden="true">
-        <span class="hero-rule-accent"></span>
-      </div>
-
-      <!-- Fila inferior -->
-      <div class="hero-footer-row">
-        <div class="hero-scroll-hint" aria-hidden="true">
+        <!-- Right Side: The Glassy Orb -->
+        <div class="hero-right">
+          <div class="glassy-orb-container">
+            <video
+              class="glassy-orb-video"
+              src="https://future.co/images/homepage/glassy-orb/orb-purple.webm"
+              autoplay
+              loop
+              muted
+              playsinline
+            ></video>
+          </div>
         </div>
       </div>
 
+      <!-- Bottom Partners Section -->
+      <div class="hero-partners">
+        <h3 class="hero-partners-title">Trusted by Top-tier product companies</h3>
+        <div class="hero-partners-logos">
+          <!-- Logo 1: Acme -->
+          <svg class="partner-logo" viewBox="0 0 120 40" fill="currentColor">
+            <polygon points="10,30 25,10 40,30" />
+            <polygon points="25,10 40,30 25,25" fill-opacity="0.5" />
+            <text x="50" y="26" font-family="'Inter', sans-serif" font-weight="700" font-size="15">ACME</text>
+          </svg>
+          <!-- Logo 2: Bolt -->
+          <svg class="partner-logo" viewBox="0 0 120 40" fill="currentColor">
+            <polygon points="15,5 30,5 20,20 35,20 15,38 23,23 10,23" />
+            <text x="45" y="26" font-family="'Inter', sans-serif" font-weight="700" font-size="15">BOLT</text>
+          </svg>
+          <!-- Logo 3: Globe -->
+          <svg class="partner-logo" viewBox="0 0 120 40" fill="currentColor">
+            <circle cx="20" cy="20" r="12" fill="none" stroke="currentColor" stroke-width="2.5" />
+            <ellipse cx="20" cy="20" rx="12" ry="4" fill="none" stroke="currentColor" stroke-width="2" />
+            <text x="42" y="26" font-family="'Inter', sans-serif" font-weight="700" font-size="15">GLOBE</text>
+          </svg>
+          <!-- Logo 4: Wave -->
+          <svg class="partner-logo" viewBox="0 0 120 40" fill="currentColor">
+            <path d="M5,20 C15,10 20,30 30,20 C40,10 45,30 55,20" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" />
+            <text x="65" y="26" font-family="'Inter', sans-serif" font-weight="700" font-size="15">WAVE</text>
+          </svg>
+          <!-- Logo 5: Apex -->
+          <svg class="partner-logo" viewBox="0 0 120 40" fill="currentColor">
+            <polygon points="20,5 35,35 5,35" fill="none" stroke="currentColor" stroke-width="3" />
+            <polygon points="20,15 28,30 12,30" />
+            <text x="45" y="26" font-family="'Inter', sans-serif" font-weight="700" font-size="15">APEX</text>
+          </svg>
+        </div>
+      </div>
     </div>
   </section>
 </template>
 
 <script setup>
-const year = new Date().getFullYear();
+// Replaced complex editorial structure with the high-fidelity Liquid Glass layout
 </script>
