@@ -17,8 +17,8 @@
   position: fixed;
   bottom: 24px;
   right: 24px;
-  width: 44px;
-  height: 44px;
+  width: 68px;
+  height: 68px;
   color: #25D366;
   display: flex;
   align-items: center;
@@ -33,8 +33,8 @@
 }
 
 .whatsapp-floating svg {
-  width: 28px;
-  height: 28px;
+  width: 52px;
+  height: 52px;
 }
 
 @media (max-width: 768px) {

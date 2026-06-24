@@ -45,6 +45,7 @@ export function initSectionTheme() {
       setTheme(theme);
 
       if (section.id) {
+        document.body.setAttribute('data-active-section', section.id);
         updateDot(section.id);
       }
     });

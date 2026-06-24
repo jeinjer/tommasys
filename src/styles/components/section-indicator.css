@@ -23,3 +23,15 @@
   background: var(--orange);
   transform: scale(1.4);
 }
+
+body[data-active-section="inicio"] .sec-dot,
+body[data-active-section="soluciones"] .sec-dot,
+body[data-active-section="formas"] .sec-dot {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+body[data-active-section="inicio"] .sec-dot.active,
+body[data-active-section="soluciones"] .sec-dot.active,
+body[data-active-section="formas"] .sec-dot.active {
+  background: #ffffff;
+}

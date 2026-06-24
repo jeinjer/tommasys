@@ -251,56 +251,7 @@
   filter: hue-rotate(105deg) saturate(250%) brightness(1.2) contrast(1.1);
 }
 
-/* ─── Partners Footer Section ────────────────────────────────────────────── */
-
-.hero-partners {
-  width: 100%;
-  margin-top: 5rem;
-  padding-top: 3.5rem;
-  border-top: 1px solid rgba(0, 0, 0, 0.06);
-  display: flex;
-  flex-direction: column;
-  gap: 1.75rem;
-}
-
-.hero-partners-title {
-  font-family: 'Saira', sans-serif;
-  font-size: 0.8rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: rgba(17, 17, 17, 0.4);
-  text-align: center;
-}
-
-.hero-partners-logos {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 100px;
-  flex-wrap: wrap;
-}
-
-.hero-partners-logos a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-}
-
-.partner-logo-img {
-  height: 80px;
-  width: auto;
-  max-width: 240px;
-  object-fit: contain;
-  opacity: 0.65;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.partner-logo-img:hover {
-  opacity: 1;
-  transform: translateY(-4px) scale(1.06);
-}
+/* Removed Partners Footer Section */
 
 /* ─── Responsive Styles ──────────────────────────────────────────────────── */
 
@@ -333,20 +284,6 @@
   .glassy-orb-container {
     max-width: 400px;
   }
-
-  .hero-partners {
-    margin-top: 3.5rem;
-    padding-top: 2.5rem;
-  }
-
-  .hero-partners-logos {
-    gap: 50px;
-  }
-
-  .partner-logo-img {
-    height: 60px;
-    max-width: 200px;
-  }
 }
 
 @media (max-width: 600px) {
@@ -373,14 +310,5 @@
 
   .glassy-orb-container {
     max-width: 320px;
-  }
-
-  .hero-partners-logos {
-    gap: 40px 30px;
-  }
-
-  .partner-logo-img {
-    height: 44px;
-    max-width: 150px;
   }
 }
