@@ -72,6 +72,13 @@
     font-size: 2.5rem;
   }
 
+  /* team-heading tiene texto largo (Código moderno.) — reducir antes */
+  .team-heading {
+    font-size: 2rem;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
   .solutions-header {
     flex-direction: column;
     align-items: flex-start;
@@ -126,6 +133,12 @@
   .contact-heading {
     font-size: 2.25rem;
     word-break: break-word; /* Prevent long words from overflowing */
+  }
+
+  .team-heading {
+    font-size: 1.5rem;
+    overflow-wrap: break-word;
+    word-break: break-word;
   }
 
   #section-indicator {

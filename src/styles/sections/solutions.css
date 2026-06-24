@@ -112,3 +112,114 @@
   border-color: rgba(232, 96, 28, 0.4);
   color: var(--orange);
 }
+
+/* ─── Partners Footer Section (Moved from Hero) ────────────────────────── */
+
+.solutions-partners {
+  width: 100%;
+  margin-top: 6rem;
+  padding-top: 4.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.solutions-partners-title {
+  font-family: 'STIX Two Text', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.85);
+  text-align: center;
+}
+
+.solutions-partners-logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 120px;
+  flex-wrap: wrap;
+}
+
+.solutions-partners-logos a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.solutions-partners-logos > * {
+  animation: floatLogo 6s ease-in-out infinite;
+}
+
+.solutions-partners-logos > *:nth-child(1) { animation-delay: 0s; }
+.solutions-partners-logos > *:nth-child(2) { animation-delay: -2s; }
+.solutions-partners-logos > *:nth-child(3) { animation-delay: -4s; }
+
+.partner-logo-img {
+  height: 100px;
+  width: auto;
+  max-width: 300px;
+  object-fit: contain;
+  opacity: 0.85;
+  /* Logos oscuros sobre fondo transparente → los vuelve blancos */
+  filter: brightness(0) invert(1);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ShortCirkuit: fondo negro dentro de la imagen → screen lo hace transparente */
+.solutions-partners-logos > a:first-of-type .partner-logo-img {
+  filter: brightness(1.5);
+  mix-blend-mode: screen;
+}
+
+.solutions-partners-logos > *:hover {
+  animation-play-state: paused;
+}
+
+.solutions-partners-logos > *:hover .partner-logo-img,
+.partner-logo-img:hover {
+  opacity: 1;
+  transform: translateY(-8px) scale(1.1);
+  filter: brightness(0) invert(1) drop-shadow(0px 0px 20px rgba(255, 255, 255, 0.4));
+}
+
+.solutions-partners-logos > a:first-of-type:hover .partner-logo-img {
+  filter: brightness(2) drop-shadow(0px 0px 20px rgba(255, 255, 255, 0.4));
+  mix-blend-mode: screen;
+}
+
+@keyframes floatLogo {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0px); }
+}
+
+@media (max-width: 1024px) {
+  .solutions-partners {
+    margin-top: 4rem;
+    padding-top: 3rem;
+  }
+  .solutions-partners-logos {
+    gap: 70px;
+  }
+  .partner-logo-img {
+    height: 85px;
+    max-width: 240px;
+  }
+}
+
+@media (max-width: 600px) {
+  .solutions-partners-logos {
+    gap: 40px 30px;
+  }
+  .partner-logo-img {
+    height: 68px;
+    max-width: 180px;
+  }
+  .solutions-partners-title {
+    font-size: 1.2rem;
+  }
+}

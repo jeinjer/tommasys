@@ -44,10 +44,27 @@
           </div>
         </SpotlightCard>
       </div>
+
+      <!-- Partners Section moved from Hero -->
+      <div class="solutions-partners">
+        <h3 class="solutions-partners-title">Ellos confían en nosotros</h3>
+        <div class="solutions-partners-logos">
+          <img :src="logoMurolo" alt="Murolo" class="partner-logo-img" />
+          <a href="https://www.shortcirkuit.com/" target="_blank" rel="noopener noreferrer" aria-label="Visitar Shortcirkuit">
+            <img :src="logoShortcirkuit" alt="Shortcirkuit" class="partner-logo-img" />
+          </a>
+          <a href="https://scarpatidomaindia.com/" target="_blank" rel="noopener noreferrer" aria-label="Visitar Scarpati Doma India">
+            <img :src="logoScarpati" alt="Scarpati" class="partner-logo-img" />
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 </template>
 
 <script setup>
 import SpotlightCard from '@/components/SpotlightCard/SpotlightCard.vue';
+import logoMurolo from '@/assets/images/murolo.webp';
+import logoShortcirkuit from '@/assets/images/shortcirkuit.webp';
+import logoScarpati from '@/assets/images/scarpati.webp';
 </script>

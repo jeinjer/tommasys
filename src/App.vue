@@ -1,4 +1,5 @@
 <template>
+  <Loader :visible="isLoading" />
   <ClickSpark
     spark-color="#e8601c"
     :spark-size="12"
@@ -59,19 +60,18 @@
     </main>
     <Footer />
     <WhatsAppFloating />
-    <SectionIndicator />
   </ClickSpark>
 </template>
 
 <script setup>
-import { onMounted } from 'vue';
+import { ref, onMounted } from 'vue';
+import Loader from '@/components/Loader.vue';
 import ClickSpark from '@/components/ClickSpark/ClickSpark.vue';
 import Particles from '@/components/Particles/Particles.vue';
 import Noise from '@/components/Noise/Noise.vue';
 import Navigation from '@/components/Navigation.vue';
 import Footer from '@/components/Footer.vue';
 import WhatsAppFloating from '@/components/WhatsAppFloating.vue';
-import SectionIndicator from '@/components/SectionIndicator.vue';
 
 // Secciones
 import Hero from '@/sections/Hero.vue';
@@ -88,10 +88,61 @@ import { initSectionTheme } from '@/scripts/modules/section-theme.js';
 import { initReducedMotion } from '@/scripts/modules/reduced-motion.js';
 import { initSectionTransitions } from '@/scripts/modules/section-transitions.js';
 
+const isLoading = ref(true);
+
 onMounted(() => {
   initReveal();
   initSectionTheme();
   initReducedMotion();
   initSectionTransitions();
+
+  const handleAllLoaded = () => {
+    // Retraso de satisfacción visual
+    setTimeout(() => {
+      isLoading.value = false;
+    }, 800);
+  };
+
+  // Promesa para verificar imágenes del DOM
+  const checkImages = () => {
+    const images = Array.from(document.querySelectorAll('img'));
+    return Promise.all(images.map(img => {
+      if (img.complete) return Promise.resolve();
+      return new Promise(resolve => {
+        img.addEventListener('load', resolve, { once: true });
+        img.addEventListener('error', resolve, { once: true });
+      });
+    }));
+  };
+
+  // Promesa para verificar la carga del video de fondo del Hero
+  const checkVideo = () => {
+    return new Promise(resolve => {
+      const video = document.querySelector('.hero-bg-video');
+      if (!video) {
+        resolve();
+        return;
+      }
+      if (video.readyState >= 3) {
+        resolve();
+        return;
+      }
+      video.addEventListener('canplaythrough', resolve, { once: true });
+      video.addEventListener('error', resolve, { once: true });
+      // Timeout de seguridad de 3 segundos
+      setTimeout(resolve, 3000);
+    });
+  };
+
+  // Promesa para la carga general del documento
+  const waitForPageLoad = new Promise(resolve => {
+    if (document.readyState === 'complete') {
+      resolve();
+    } else {
+      window.addEventListener('load', resolve, { once: true });
+    }
+  });
+
+  Promise.all([waitForPageLoad, checkImages(), checkVideo()]).then(handleAllLoaded);
 });
 </script>

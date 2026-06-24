@@ -8,7 +8,8 @@
       <div class="team-info-side">
         <p class="section-label">El equipo</p>
         <h2 class="team-heading" id="team-heading">
-          Código moderno.<br />Trato directo.
+          <span class="team-heading-line">Código moderno.</span>
+          <span class="team-heading-line">Trato directo.</span>
         </h2>
         <p class="team-lead-text">
           Somos profesionales nativos digitales formados en ingeniería. Nos involucramos personalmente en cada proyecto, combinando la agilidad de las tecnologías más nuevas con las bases sólidas que exige el desarrollo de software a nivel empresarial.
@@ -116,6 +117,37 @@ import roccoAvatar from '@/assets/images/rocco.png';
   line-height: 1.05;
   text-transform: uppercase;
   color: var(--ink);
+  display: flex;
+  flex-direction: column;
+}
+
+.team-heading-line {
+  display: block;
+  white-space: nowrap;
+}
+
+@media (max-width: 1024px) {
+  .team-heading {
+    font-size: 2.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .team-heading {
+    font-size: 2.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .team-heading {
+    font-size: 1.85rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .team-heading {
+    font-size: 1.7rem;
+  }
 }
 
 .team-lead-text {
